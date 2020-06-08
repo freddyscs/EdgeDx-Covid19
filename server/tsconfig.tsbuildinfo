@@ -2182,7 +2182,7 @@
         "signature": "202c6be737a013f5f393cb338ac6e53f6b228fc7745f209f24889d9c3ec7a9a2"
       },
       "./src/sequence.ts": {
-        "version": "d64cd8bf322ca5d7014740c650734951288ccfc6f9431e163accdadb78b07857",
+        "version": "a391e73d64da3d38f88c8d94926565c4bbe60d433df65b81f0394a5f1521452f",
         "signature": "151514754bcc9ac3e2d8a443779bf0f2876f7c0ff81c104179537537b4aa1e80"
       },
       "./node_modules/@types/bcryptjs/index.d.ts": {
@@ -2194,103 +2194,103 @@
         "signature": "f03594cc668c4d08662922715b727f5680f028bab3746d13adfac62674c97537"
       },
       "./src/models/genexpertsummary.model.ts": {
-        "version": "7a4706afb191ced1e481369aec65ec4e487452b24d912f9fa94c7140b64574da",
+        "version": "3ccd6e8e77ffef92d634fcd6dc53741019bd593d3093d01e7fd668afbfc14ad0",
         "signature": "d824714000e135a24b2997b2b70623b0c6429accd2861fa7146cdee108d1b6a4"
       },
       "./src/models/genexperttestanalyte.model.ts": {
-        "version": "ddab7227b9a12cd5cfe7d45ff26ae516bc6359551b009bdfd301214e0bfaaf94",
+        "version": "264d5d2f09426cec0ab991d344f59014d7a895567280fc7bb6161516e9bd1111",
         "signature": "e57f198167e1f5e93fd61e58f47ac9cebd3dca2b5f7545cfbde2bd7c451c81f1"
       },
       "./src/models/genexpertprobecheckdetail.model.ts": {
-        "version": "8bc0443f94797fe415f50e4ac874e2d12048d9ecb98164b03fc969c9c3c2233c",
+        "version": "8ddcf762acb80655b18c343c258b0c031b6b30d4ac19d3a19f3856dd92c71859",
         "signature": "ff624841580e7e1d5da560500ab1d17455800fe0a9be73407f94b3bee24856dc"
       },
       "./src/models/genexpert.model.ts": {
-        "version": "81de76ee992af58c289647d20ae2b8e959b72d5041d9d81d035765e4fc4d75de",
+        "version": "c933499f3ff89cd6c0b1640624cbc10151cdc8ec484578bea1698817c8d02376",
         "signature": "79952b8219c790f7c014984b259518fde431775a95f88596fd72a4448c2e1bbe"
       },
       "./src/models/place.model.ts": {
-        "version": "b05c3e7e4a8eb476019cb6b01d06e92eddaf67339ed33d454b28711c677bc6b8",
+        "version": "ea34ea95b5108cbfd4f16dc3fac8370d91dec7aa7836ba4a681773ee2c9ec48c",
         "signature": "946b4ca20e20b1a4a1f7688639ec0192bb221ff908327480001541132e77e849"
       },
       "./src/models/survey.model.ts": {
-        "version": "49944b8b4ac3c46791a97ce0cc4fcf8653c4e128da04ebf76c9cdacb4c3e45b6",
+        "version": "d8a07a56562288bb1244d7aca2198506020f7c379e29741f544891736bedf3a6",
         "signature": "d13c44d45c1b428a9e50e045bed9344f59b45ead526e9c30b1ec04ac3bfb75d3"
       },
       "./src/models/appointment.model.ts": {
-        "version": "20c040b3e9e3b2d6721c08e3470d2c81ccfd523d270e4f31bd33f2c4c5ad7580",
+        "version": "4ad9fb176e4e8b8aa22cd96132c441c3d85c09b11d756698d601f460f7b8f567",
         "signature": "44d8a9794f6966fc9791c0267b9e73746392cc6c7b251a94f2ed37ae17057e7d"
       },
       "./src/models/result-notification.model.ts": {
-        "version": "66b19b71688744c41888a447766637535d67b0d4c3a56069bc7a5672c05cb804",
+        "version": "e8614025c2247bea70d2db1f83185a746e77c8a49f1d63159a32e87d3dc20fb3",
         "signature": "1a4138b3030837e7ac0b352e0e2235d249e33411dd9343ad3605b6af1a0f0ccb"
       },
       "./src/models/rawdata-role.model.ts": {
-        "version": "63421b19d20386e9a1c5b1fccc52832560dffe437bce996df620b2c481f3dade",
+        "version": "fc70ccad47a768d8764119617d9cdf435cf68e9c2792769e12832ef8589722a5",
         "signature": "94c164c4704c2a98f2ee3b60b3493049358b11711aefdb46d105e3d51b73c4b3"
       },
       "./src/models/rawdata-user.model.ts": {
-        "version": "2062dc104984699c9670de258fd2a2ad8ebd5d5b9a9e3b3564faf8dd6e52b8a9",
+        "version": "5c0ca256aaac0d97ea3ac5550bc0d6b95b0e34c3c822d90ad11cee79080a86b0",
         "signature": "0805812b58b3eb2acc8d19f1e3de7167194dcc999813e741739e821dc18b05e8"
       },
       "./src/models/index.ts": {
-        "version": "7b47a97984ba95e30aa33d17489d696c1664e8b89b25b6da85e33f92c9b2d3c7",
+        "version": "f29c539bf61c5cb644f05c3d30c30cb9bb405d6da37b16fbe96dad1f2abadaf0",
         "signature": "f29c539bf61c5cb644f05c3d30c30cb9bb405d6da37b16fbe96dad1f2abadaf0"
       },
       "./src/datasources/mysql.datasource.config.json": {
-        "version": "e28036c87573fe9ae6926dfe70a59c0697217a876a7e305ca999a773d00baa0a",
+        "version": "f34bcfc902ccdc8006cbbf064cb5623dcf1a9e4e8fdc0c6e25fc82a82295dc24",
         "signature": "995d0428f415c2503b5c16d436a2a8dfd3c5a7f066f348e57d130d26da3e0389"
       },
       "./src/datasources/mysql.datasource.ts": {
-        "version": "24ae79c5fcfd4eb2d9bcd536899a2b9f2a723b4ef889cad66587f7b9b54f179e",
+        "version": "3002d352342466cb5b3689359f13a5cb5bef3c82f475d82dfd2f7527b74ec5ba",
         "signature": "ae9ea32e2a71d0a4491362482ea3cc067b58023954c3869e787b5f1530e86ed2"
       },
       "./src/datasources/index.ts": {
-        "version": "c256967a57a848ece276d6edf2076f03ea55fb853724ab768ac520f57dc21fc8",
+        "version": "ec4ce565de387c5d8e6bdc6e1c4d7bbd4f1f11d9334c262700e8712a3cc6e511",
         "signature": "ec4ce565de387c5d8e6bdc6e1c4d7bbd4f1f11d9334c262700e8712a3cc6e511"
       },
       "./src/repositories/genexpertsummary.repository.ts": {
-        "version": "248bc27accd69dbff4486681a0b6cd21b0adb6e6fd90d1f47bbcd799dbed5d13",
+        "version": "06e3ea261be118fd259f70ffd9a10f327b268c233f89b3d985c25ae759bd3562",
         "signature": "ce19d23de8c65d3ba9d8911090264a3066492913a764eb6e7646956139cd77ae"
       },
       "./src/repositories/genexperttestanalyte.repository.ts": {
-        "version": "8d638840f26ed083553037c4409495256427ad8209de833b12737fcb34907206",
+        "version": "16204024989524242dbcc52ff508d32a5ef635ccab2b0adbd85358c10042fcda",
         "signature": "797e975a1591afe7cb1b8d654cee78c67aba2520d8fd54d80752a2e7027a82eb"
       },
       "./src/repositories/genexpertprobecheckdetail.repository.ts": {
-        "version": "803a8cc0e0238e6b8ba119ca13cff711d7224af2e78a8116ccf62ac510438f74",
+        "version": "62d86246bbeea5b185b517633e3dee17839e80edd228251619a52dcf8a2271e6",
         "signature": "406e3109b571a3af71f3d90962f3ebdcd7bf7c99c183c49167e34722dc35ce75"
       },
       "./src/repositories/genexpert.repository.ts": {
-        "version": "ee9fb6f95483fade26a791c001579631e2478e7a68aa32791c897dba2b4b0c61",
+        "version": "142f6e574f2b6f4f5b744885332b19ab083a12e5c8c37540a35362b8188bdc36",
         "signature": "a65ba27e4f21e9cac9036a723b9948e8a226629d2c04511497394207ea0b8529"
       },
       "./src/repositories/place.repository.ts": {
-        "version": "9fa6ba734fa293920c2a29c68e6f6458de38d53bfe481e1e6211dcf9058b69a2",
+        "version": "578b399abaeb460712e6896a869c0c00c111fc84e81c52e0e74551f52b10ca8d",
         "signature": "f806d22bcfc2b1e657045c0b0f3c3d0186bf09a870376fb3ce50abb5b2d3c728"
       },
       "./src/repositories/survey.repository.ts": {
-        "version": "e765469bc3837cbeb74ddb8e1f52383fd74071e0aac53647a2bf8bdd99df4291",
+        "version": "250963bf831b8a04a9b5e333e1b8545332d586f1bbf17302f8e98368dabd050e",
         "signature": "95d3a2528588296f5c5c9900703ec55db9046317da047e90bcd7359acc8dc165"
       },
       "./src/repositories/appointment.repository.ts": {
-        "version": "001310db8e0fb1767eec88d55fb37d45a37ab1e26e65533f1de67347f11ff065",
+        "version": "bfa40ce03037d27917ffb2cf47b20f5d30d621d4e748277ad659ffd1e2dda153",
         "signature": "e00b75e7c96fac519184b58739efd8fb368ae171ba8c33cf47e865868796774a"
       },
       "./src/repositories/result-notification.repository.ts": {
-        "version": "75d3bceda910eea6819505e9a2ed8bf5b6ec6ee7c948fcc401f971eb165141ab",
+        "version": "d19c424cd6d159093652a5e441b8be36ed35ccbbb906e047e70fb935c9948bba",
         "signature": "d7f23aaceacdfd8edf97038fa794885ad2668ce5577116180e3cddd1251a322e"
       },
       "./src/repositories/rawdata-role.repository.ts": {
-        "version": "2477cbd685625b2b688454effffe1acdb0c9fbfc1035aa436a94ab7035020efc",
+        "version": "b9abeba0f385ae64ad15520957ddcff3e73bae0f725fceb5621dbe17238b39b4",
         "signature": "1321283b82517fb30c95b3ea9c755c0be78e1154ce7d3f1a5ed5615cd66da4cb"
       },
       "./src/repositories/rawdata-user.repository.ts": {
-        "version": "ec0b40bbe3688b5e31de7666553dc72f4bddfbead703d937c674dc30bf492591",
+        "version": "4e8e1579e5f72bda32a12c9b036b9be39460cc56d9abcfab521d90fa87a763d8",
         "signature": "06124accb844495769e50d164d1ad34d5d361c7ad017937e980268c9db04b136"
       },
       "./src/repositories/index.ts": {
-        "version": "5f53a2fc232586d6e2aa3dc1408484ec4b05cc2aa7b127bea481161cb6446a34",
+        "version": "fa04bb09af7f7686e3c4bef5d152d5413ffdf61d4293b6765bd447a6d606c1df",
         "signature": "fa04bb09af7f7686e3c4bef5d152d5413ffdf61d4293b6765bd447a6d606c1df"
       },
       "./src/keys.ts": {
@@ -2314,15 +2314,15 @@
         "signature": "584258bcfa725d84bd5fa4d3b27a76f60e3eeefcf5b140cb37c929f5a7d64541"
       },
       "./src/application.ts": {
-        "version": "d598a887a8f6b7ac86702b71b5c6c2bfcade7eface90b67bcd559cfe7d983ea1",
+        "version": "abba4d375e2a9fac7154ff0b9c7df46057e13a28dd043d06dc165692583ed83d",
         "signature": "c5e95775a532c85c2e87829d8e22f7692b1a58ee6ca2a069d1ada20713a2d0cd"
       },
       "./src/index.ts": {
-        "version": "1607fb3f5e053bc0cb4675cb4edd5a0f8eb10c68b577d0b0c51cffb851663ab0",
+        "version": "5e573690fb149bbe48d31efb8e9c736cf8acf93238376910436373240b7ad801",
         "signature": "12a9be914b134efa8303be3da6f5f1b1b980df51ac9a7cdce038086f7f5cd2e9"
       },
       "./src/migrate.ts": {
-        "version": "5ab786daf6dca41967a53bc03cdb0f7fe65a6634ad003ba34b61c3587c76c6bc",
+        "version": "ec92fba5dcc0ec683509d086a6d31c9b0388bc7f28d183a580e99d73c260b618",
         "signature": "e9b8dbbcc0cb738d2836845996cec05b75916fe8314d6d515028b0cab71df9c9"
       },
       "./node_modules/@types/cookiejar/index.d.ts": {
@@ -2402,55 +2402,55 @@
         "signature": "965325f10ce3cbe879d2b7ad658d76f08fc348e20985ab0e09dd76ddf7e6bee1"
       },
       "./src/__tests__/acceptance/test-helper.ts": {
-        "version": "50c2b2f7220f9e6b108e1d954455482c0ab3c44e78857b654b880c70cbb0a4d4",
+        "version": "9e7ed177b08713d53a598d232a50f714f0418eec49a90ae4ead0299ecb4f70be",
         "signature": "0f3f8850af8e1eff22227c799594978f2f4a169dd94f350ebe02a974bd36c33c"
       },
       "./src/__tests__/acceptance/home-page.acceptance.ts": {
-        "version": "2b0e7c1e58898a23377d55b107bd4a6f43a86a90426729106007620927b292a5",
+        "version": "3242cdd63edaf8aa9be69926c501f60ba5c3f41218896307ff75ad872e3177de",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
       },
       "./src/__tests__/acceptance/ping.controller.acceptance.ts": {
-        "version": "abb5b8bdda227892a90e3ee25e303d621ba3b617fb5b9602e3133e6bb79e4f1a",
+        "version": "aae5bdf27bc382b273693746e8cbeb269f57df5ea84acd56ed50a28dd3113bc7",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
       },
       "./src/controllers/appointment.controller.ts": {
-        "version": "7d131bc070753c0e32ea63cb2085fc4a5e795effd72a674f175a81e0feda8c2f",
+        "version": "d5c48f26ee3d7b8673cfaae10d1e9a0fe05ec5cdede5ac9c1c30a7b4b711022a",
         "signature": "2643309e077033d020b065316e739b30f32bf1f4af614de8d18cbda70e53e9a3"
       },
       "./src/controllers/genexpert.controller.ts": {
-        "version": "540f6b9145b7af5988aa4c9fc5f0aa8d46382cc3a6266fdab03b7daf8b2e6196",
+        "version": "9eb9fc4d4844f2d4c88a650a4ba995452e024ad9729c9973991113cf9ae41bd7",
         "signature": "da25fdd084cfcc02e793911947648f5b745d638f46949fe1f215ad8dd50ae6e5"
       },
       "./src/controllers/genexpertprobecheckdetail.controller.ts": {
-        "version": "130fd798ce4b2935f0c275d3c03b66828e2e449e85aaef99fa13bb605e2b1a18",
+        "version": "70f34727b83f1acf553757da9007a267ee9bf4013e23f893e8c5d706bf2e9421",
         "signature": "9934978a93236a7782e2f37466ba941473bff8dc3fcc955292a96a0ead06f82e"
       },
       "./src/controllers/genexpertsummary.controller.ts": {
-        "version": "9bc2c466838d752ffdece6c06ec84a2ed2950b29658cbd98808dd73aa8414165",
+        "version": "bcd40aa0e3d8d3247f362792efa8163207087c149478d0ad3f8a69aeb6107d24",
         "signature": "af540c035178eda828036080fbf60399e120bef4e030163248a527e37f80b647"
       },
       "./src/controllers/genexperttestanalyte.controller.ts": {
-        "version": "be5ac0097519dbda380af8542aca1e07bc848b384dd203d42f4bc14452a35b7b",
+        "version": "e7838c8103c09e182ad37de34f6f5c02480979260a1d906d70fb4554a72161b8",
         "signature": "e872202d1beb384c1dbe52ed007057ff43a7a753de5adc2c7a14b8a2c83f6420"
       },
       "./src/controllers/ping.controller.ts": {
-        "version": "207bbd7fd9e2ff44547dfb0de9f86c6852ef4f6e9503c2794f6bd2c6e38c34de",
+        "version": "44004285e983484b302adf69210840e51def69d9aeb98e5d92ef5d668944ba6c",
         "signature": "298dcf42626620a1d183c7a1d1f08ad2311840ec09f9512d57335dd1c7d9fc72"
       },
       "./src/controllers/place.controller.ts": {
-        "version": "48f8471c9ce784e577c24ccc304883b91468a185f1fa8ede88ed461406c9b07a",
+        "version": "99f8d6a373090bc6826c3aa3a71aa7a2474d0dd49c04abba1076a3de70f322d3",
         "signature": "857f4c3fdffdd3863f72f990bd1e2a7a8e3e0f0b980c6e6730e06012acefbf62"
       },
       "./src/controllers/survey.controller.ts": {
-        "version": "e0d75ba7c2f801026d10bccf809ee5f6315297bcc0102556720d1769c5960dc1",
+        "version": "c5996726b567f9744d531883e11f698b81e3435d3212f2bf4434596076a71584",
         "signature": "939e29ec44eb5db4872e4ecc5b1a3808ddb24d43f793500d74e1a02ca903eb53"
       },
       "./src/controllers/result-notification.controller.ts": {
-        "version": "962fc00ad33f5728106054999fb6f7a794ea4acf13d15672e08e9d2bbeec4498",
+        "version": "6b766afa367cf50b770bad597a3787ce7b45d1a1c90d9c76971ba6e7fb3c3ef2",
         "signature": "9b12188ae03f6a0db8889ff9e115679d0a6fc535d02eb27328b0ddc694a26e18"
       },
       "./src/controllers/rawdata-role.controller.ts": {
-        "version": "37a2f167da66db69e2e0527ae04bfc27ccc5b3db591667184360200f80f1a841",
+        "version": "58fb5776994695bc9712536dbd4f735df7e737dddd8231ccc1c3ca09305089a4",
         "signature": "acfd6f4d5865951d23fcd94e4df34ad3374901b702395b09b4f34731e5dc4b98"
       },
       "./src/controllers/specs/user-controller.specs.ts": {
@@ -2458,11 +2458,11 @@
         "signature": "04bc7f52849987a9932bbba5bfa16764c94ca01072bdc7aca5688ed98b2f07b0"
       },
       "./src/controllers/rawdata-user.controller.ts": {
-        "version": "a9d85b5b2762daf8bb30aa347da30f28484110ce2159c8b16d53ce37e97c5f4e",
+        "version": "e968c7d26bf4c7c76d86f89814176484ccd4086395c6a9bbb56b8427d0d650ff",
         "signature": "20da89bfb75d89eaae88b750b34ee8d4bc37d0aa51ce84894d6af3ab372f0bed"
       },
       "./src/controllers/index.ts": {
-        "version": "4cf4fcf1746285de7ed657ea3d1b4217d986f341d4690511ad7247696ed5d4df",
+        "version": "9801dc486365d6c9f335a6bc75850fcdc9e07a32dad6785744cfcb0eb20d437e",
         "signature": "9801dc486365d6c9f335a6bc75850fcdc9e07a32dad6785744cfcb0eb20d437e"
       },
       "./node_modules/@types/color-name/index.d.ts": {
@@ -12223,8 +12223,55 @@
       "./node_modules/@loopback/authentication/dist/services/user-identity.service.d.ts",
       "./node_modules/@loopback/authentication/dist/services/index.d.ts",
       "./node_modules/@loopback/authentication/dist/index.d.ts",
-      "./src/sequence.ts",
       "./node_modules/@types/bcryptjs/index.d.ts",
+      "./src/services/hash.password.bcryptjs.ts",
+      "./src/keys.ts",
+      "./src/authentication-strategies/jwt-strategy.ts",
+      "./src/services/jwt-service.ts",
+      "./src/services/user-service.ts",
+      "./src/utils/security-spec.ts",
+      "./node_modules/@types/cookiejar/index.d.ts",
+      "./node_modules/@types/superagent/index.d.ts",
+      "./node_modules/@types/supertest/index.d.ts",
+      "./node_modules/@loopback/testlab/dist/client.d.ts",
+      "./node_modules/@loopback/testlab/should-as-function.d.ts",
+      "./node_modules/@loopback/testlab/dist/expect.d.ts",
+      "./node_modules/@loopback/testlab/dist/http-error-logger.d.ts",
+      "./node_modules/@loopback/testlab/dist/http-server-config.d.ts",
+      "./node_modules/@loopback/testlab/dist/request.d.ts",
+      "./node_modules/@types/shot/index.d.ts",
+      "./node_modules/@loopback/testlab/dist/shot.d.ts",
+      "./node_modules/@types/sinon/ts3.1/index.d.ts",
+      "./node_modules/@loopback/testlab/dist/sinon.d.ts",
+      "./node_modules/@loopback/testlab/dist/skip.d.ts",
+      "./node_modules/@loopback/testlab/dist/test-sandbox.d.ts",
+      "./node_modules/@loopback/testlab/dist/to-json.d.ts",
+      "./node_modules/@loopback/testlab/dist/validate-api-spec.d.ts",
+      "./node_modules/@loopback/testlab/dist/index.d.ts",
+      "./node_modules/@loopback/testlab/index.d.ts",
+      "./src/controllers/specs/user-controller.specs.ts",
+      "./node_modules/@types/color-name/index.d.ts",
+      "./node_modules/@types/eslint-visitor-keys/index.d.ts",
+      "./node_modules/@types/fs-extra/index.d.ts",
+      "./node_modules/@types/minimatch/index.d.ts",
+      "./node_modules/@types/glob/index.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/common.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/array.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/collection.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/date.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/function.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/lang.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/math.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/number.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/object.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/seq.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/string.d.ts",
+      "./node_modules/@types/lodash/ts3.1/common/util.d.ts",
+      "./node_modules/@types/lodash/ts3.1/index.d.ts",
+      "./node_modules/@types/mocha/index.d.ts",
+      "./node_modules/@types/on-finished/index.d.ts",
+      "./node_modules/@types/type-is/index.d.ts",
+      "./src/sequence.ts",
       "./src/models/genexpertsummary.model.ts",
       "./src/models/genexperttestanalyte.model.ts",
       "./src/models/genexpertprobecheckdetail.model.ts",
@@ -12248,57 +12295,8 @@
       "./src/repositories/appointment.repository.ts",
       "./src/repositories/result-notification.repository.ts",
       "./src/repositories/rawdata-role.repository.ts",
-      "./src/utils/security-spec.ts",
-      "./node_modules/@types/cookiejar/index.d.ts",
-      "./node_modules/@types/superagent/index.d.ts",
-      "./node_modules/@types/supertest/index.d.ts",
-      "./node_modules/@loopback/testlab/dist/client.d.ts",
-      "./node_modules/@loopback/testlab/should-as-function.d.ts",
-      "./node_modules/@loopback/testlab/dist/expect.d.ts",
-      "./node_modules/@loopback/testlab/dist/http-error-logger.d.ts",
-      "./node_modules/@loopback/testlab/dist/http-server-config.d.ts",
-      "./node_modules/@loopback/testlab/dist/request.d.ts",
-      "./node_modules/@types/shot/index.d.ts",
-      "./node_modules/@loopback/testlab/dist/shot.d.ts",
-      "./node_modules/@types/sinon/ts3.1/index.d.ts",
-      "./node_modules/@loopback/testlab/dist/sinon.d.ts",
-      "./node_modules/@loopback/testlab/dist/skip.d.ts",
-      "./node_modules/@loopback/testlab/dist/test-sandbox.d.ts",
-      "./node_modules/@loopback/testlab/dist/to-json.d.ts",
-      "./node_modules/@loopback/testlab/dist/validate-api-spec.d.ts",
-      "./node_modules/@loopback/testlab/dist/index.d.ts",
-      "./node_modules/@loopback/testlab/index.d.ts",
-      "./src/controllers/ping.controller.ts",
-      "./src/controllers/specs/user-controller.specs.ts",
-      "./node_modules/@types/color-name/index.d.ts",
-      "./node_modules/@types/eslint-visitor-keys/index.d.ts",
-      "./node_modules/@types/fs-extra/index.d.ts",
-      "./node_modules/@types/minimatch/index.d.ts",
-      "./node_modules/@types/glob/index.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/common.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/array.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/collection.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/date.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/function.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/lang.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/math.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/number.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/object.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/seq.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/string.d.ts",
-      "./node_modules/@types/lodash/ts3.1/common/util.d.ts",
-      "./node_modules/@types/lodash/ts3.1/index.d.ts",
-      "./node_modules/@types/mocha/index.d.ts",
-      "./node_modules/@types/on-finished/index.d.ts",
-      "./node_modules/@types/type-is/index.d.ts",
       "./src/repositories/rawdata-user.repository.ts",
-      "./src/controllers/rawdata-user.controller.ts",
-      "./src/services/user-service.ts",
       "./src/repositories/index.ts",
-      "./src/services/hash.password.bcryptjs.ts",
-      "./src/keys.ts",
-      "./src/authentication-strategies/jwt-strategy.ts",
-      "./src/services/jwt-service.ts",
       "./src/application.ts",
       "./src/index.ts",
       "./src/migrate.ts",
@@ -12310,10 +12308,12 @@
       "./src/controllers/genexpertprobecheckdetail.controller.ts",
       "./src/controllers/genexpertsummary.controller.ts",
       "./src/controllers/genexperttestanalyte.controller.ts",
+      "./src/controllers/ping.controller.ts",
       "./src/controllers/place.controller.ts",
       "./src/controllers/survey.controller.ts",
       "./src/controllers/result-notification.controller.ts",
       "./src/controllers/rawdata-role.controller.ts",
+      "./src/controllers/rawdata-user.controller.ts",
       "./src/controllers/index.ts"
     ]
   },

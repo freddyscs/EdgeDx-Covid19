@@ -52,7 +52,7 @@ export default {
             console.log(result.data)
             })
 
-            alert(this.info);
+            alert(result.data);
             })
             .catch(error => {
             console.log(error);
