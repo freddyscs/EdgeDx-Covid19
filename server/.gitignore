@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
-tsconfig.tsbuilinfo
+tsconfig.tsbuildinfo
 
 # Editor directories and files
 .idea
@@ -8,4 +8,3 @@ tsconfig.tsbuilinfo
 *.ntvs*
 *.njsproj
 *.sln
-
