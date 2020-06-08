@@ -1,0 +1,10 @@
+{
+  "name": "mysql",
+  "connector": "mysql",
+  "url": "mysql://master:brainchex@tableau-connectpoc-db.cv9urzvkzg4r.us-west-2.rds.amazonaws.com/tableau_connectpoc_db",
+  "host": "tableau-connectpoc-db.cv9urzvkzg4r.us-west-2.rds.amazonaws.com",
+  "port": 3306,
+  "user": "master",
+  "password": "brainchex",
+  "database": "tableau_connectpoc_db"
+}

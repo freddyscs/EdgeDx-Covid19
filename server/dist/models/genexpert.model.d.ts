@@ -1,0 +1,51 @@
+import { Entity } from '@loopback/repository';
+export declare class Genexpert extends Entity {
+    id: number;
+    testingPoint: string;
+    country: string;
+    province: string;
+    district: string;
+    macID: string;
+    assay: string;
+    assay_disclaimer: string;
+    assay_type: string;
+    assay_version: string;
+    device_name: string;
+    exported_date: string;
+    specific_parameters: string;
+    reagent_lot_number: string;
+    user: string;
+    cartridge_sn: string;
+    end_time: string;
+    error: string;
+    error_status: string;
+    expiration_date: string;
+    history: string;
+    instrument_sn: string;
+    melt_peaks: string;
+    messages: string;
+    module_name: string;
+    module_sn: string;
+    notes: string;
+    patient_id: string;
+    reagent_lot_id: string;
+    sample_id: string;
+    sample_type: string;
+    software_version: string;
+    start_time: string;
+    status: string;
+    test_disclaimer: string;
+    test_result: string;
+    test_type: string;
+    LabName: string;
+    test_id: number;
+    latitude: number;
+    longitude: number;
+    date_imported_to_server: string;
+    date_imported_to_node: string;
+    nascop_from_node: string;
+    constructor(data?: Partial<Genexpert>);
+}
+export interface GenexpertRelations {
+}
+export declare type GenexpertWithRelations = Genexpert & GenexpertRelations;
