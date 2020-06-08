@@ -43,13 +43,12 @@ export default {
             this.info = response.data;
             console.log(this.info.token);
             let token = this.info.token;
-            //Axios.defaults.headers.common['Authorization'] = 'Bearer ' + autho;
             const auth = {
                     headers: {Authorization:'Bearer ' + token} 
                 }
 
             axios.get('/users',auth).then(result => { 
-            console.log(result.data)
+            console.log("Data from server:"+result.data)
             })
 
             alert(result.data);
