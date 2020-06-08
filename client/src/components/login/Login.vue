@@ -13,7 +13,9 @@
                 </label>
             </div>
             <button type="button" class="btn btn-lg btn-primary btn-block"  v-on:click="login()" >{{ $t('message.SignIn') }}</button>
+            <button type="button" class="btn btn-lg btn-primary btn-block"  v-on:click="killToken()" >kill token</button>
         </form>
+        {{token}}
     </div>
 </template>
 
@@ -27,6 +29,7 @@ const UrlLogin = "/users/login";
 export default {
     data: function() {
         return {
+          token: localStorage.getItem('token') || null,
           email: '',
           password: '',
           credentials: {},
@@ -41,17 +44,10 @@ export default {
         axios.post(UrlLogin, this.credentials)
         .then(response => {
             this.info = response.data;
-            console.log(this.info.token);
-            let token = this.info.token;
-            const auth = {
-                    headers: {Authorization:'Bearer ' + token} 
-                }
-
-            axios.get('/users',auth).then(result => { 
-            console.log("Data from server:"+result.data)
-            })
-
-            alert(result.data);
+            localStorage.setItem('token', this.info.token);
+            const auth = {headers: {Authorization:'Bearer ' + localStorage.getItem('token')} };
+            this.getData(auth);
+            
             })
             .catch(error => {
             console.log(error);
@@ -61,6 +57,23 @@ export default {
               //console.log("Final");
             });
 
+      },
+      getData: function(auth){
+        axios.get('/users',auth).then(result => { 
+            console.log("Data from server:"+result.data)
+            }).catch(error => {
+            console.log(error);
+            })
+            .finally(() => {
+              //console.log("Final");
+            });
+            this.$router.push({ path: '/dashboard' })
+
+
+      },
+      killToken: function(){
+        
+        this.token = localStorage.removeItem('token');
       }
 
     },

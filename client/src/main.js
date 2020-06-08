@@ -23,6 +23,7 @@ import Appointment from './components/appointment/Appointment.vue'
 import AppointmentDate from './components/appointment/AppointmentDate.vue'
 import AppointmentDummy from './components/appointment/AppointmentDummy.vue'
 import Login from './components/login/Login.vue'
+import Dashboard from './components/dashboard/dashboard.vue'
 import VueRouter from 'vue-router';
 import Results from './components/results/results-covid.vue'
 import { routes } from './routes';
@@ -56,6 +57,7 @@ Vue.component('edgedx-AppointmentDummy', AppointmentDummy)
 Vue.component('edgedx-qrcodevue', QrcodeVue)
 Vue.component('edgedx-login', Login)
 Vue.component('edgedx-results', Results)
+Vue.component('edgedx-dashboard', Dashboard)
 
 
 Vue.use(BootstrapVue);
