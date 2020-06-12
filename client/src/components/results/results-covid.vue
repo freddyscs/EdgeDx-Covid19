@@ -281,7 +281,7 @@ export default {
 			}
 		},
 		phone: function(){
-			if (this.$v.phone.$invalid === false && this.$v.email.$invalid === false){
+			if (this.$v.phone.$invalid === false){
 				this.invalid=false;
 			}else{
 				this.invalid=true;
