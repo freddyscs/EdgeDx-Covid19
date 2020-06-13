@@ -89,11 +89,11 @@
 									</div>
 									<div class="row" >
 										<div class="input-group">
-											<input type="text" class="form-control" v-bind:placeholder="$t('message.resultsPhonePlaceholder')"
+											<!--input type="text" class="form-control" v-bind:placeholder="$t('message.resultsPhonePlaceholder')"
 											 id="phone" 
 											 @blur="$v.phone.$touch()"
-											v-model="phone">
-												
+											v-model="phone"-->
+											<VuePhoneNumberInput default-country-code="US" size="lg" @blur="$v.phone.$touch()"  @update="phoneResults = JSON.stringify($event)" v-model="phone"/>
 											<div class="input-group-append">
 											<!--button class="btn btn-outline-secondary" type="button" v-on:click="register()"  :disabled="$v.phone.$error"  >Save</button-->
 											</div>
@@ -166,6 +166,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 import {required, email, minLength, numeric, maxLength} from 'vuelidate/lib/validators'
+import VuePhoneNumberInput from 'vue-phone-number-input'
 
 //const baseUrl = "http://myrawdata.com:8080/rawdata/api/getTestResult/";
 const baseUrl = "http://www.myrawdata.com:3000/genexperts/?filter[where][sample_id]="
@@ -176,7 +177,10 @@ function buildUrl (key) {
 
 
 export default {
-     data () {
+     components: {
+      VuePhoneNumberInput
+	},
+	data () {
     return {
 	  url: null,	
       info: null,
@@ -187,6 +191,7 @@ export default {
 	  resultless: null,
 	  email: null,
 	  phone: '',
+	  phoneFormatted: '',
 	  company: 'EdgeDx',
 	  testId: null,
 	  registerContent: {},
@@ -195,7 +200,8 @@ export default {
 	  validPhone: null,
       logo: '../../assets/images/edgedx-large-60.png',
 	  invalid: true,
-	  btnRegisterDisplay: true
+	  btnRegisterDisplay: true,
+	  phoneResults:null
 	  }
   },
   validations: {
@@ -204,9 +210,8 @@ export default {
 			email
 		},
 		phone: {
-			minLength: minLength(10),
-			maxLength: maxLength(10),
-			numeric
+			minLength: minLength(14),
+			maxLength: maxLength(14)
 	}
 	
 	},
@@ -245,6 +250,7 @@ export default {
 				this.registerNotification = false;
 				this.btnRegisterDisplay = true;
 				this.phone = '';
+				this.phoneFormatted = '';
 				
 			},
 			register: function(){
@@ -253,7 +259,7 @@ export default {
                     email: this.email,
                     sample_id: this.testId,
 					notification_sent: 0,
-					phone_number: this.phone
+					phone_number: this.phoneFormatted
                 };
 				//Aqui se envia la información para crear la cita.
 				//console.log(this.registerContent);
@@ -281,8 +287,11 @@ export default {
 			}
 		},
 		phone: function(){
-			if (this.$v.phone.$invalid === false){
+			let phoneValidation = JSON.parse(this.phoneResults);
+			
+			if (phoneValidation['isValid'] === true){
 				this.invalid=false;
+				this.phoneFormatted = phoneValidation['nationalNumber'];
 			}else{
 				this.invalid=true;
 			}

@@ -28,6 +28,7 @@ import VueRouter from 'vue-router';
 import Results from './components/results/results-covid.vue'
 import { routes } from './routes';
 import VueI18n from 'vue-i18n';
+import VuePhoneNumberInput from 'vue-phone-number-input';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -58,6 +59,8 @@ Vue.component('edgedx-qrcodevue', QrcodeVue)
 Vue.component('edgedx-login', Login)
 Vue.component('edgedx-results', Results)
 Vue.component('edgedx-dashboard', Dashboard)
+Vue.component('vue-phone-number-input', VuePhoneNumberInput);
+import 'vue-phone-number-input/dist/vue-phone-number-input.css';
 
 
 Vue.use(BootstrapVue);
