@@ -89,12 +89,15 @@
 									</div>
 									<div class="row" >
 										<div class="input-group">
-											<input type="text" class="form-control" v-bind:placeholder="$t('message.resultsPhonePlaceholder')"
+											<!--input type="text" class="form-control" v-bind:placeholder="$t('message.resultsPhonePlaceholder')"
 											 id="phone" 
 											 @blur="$v.phone.$touch()"
-											v-model="phone">
-											{{phone}}
-												
+											v-model="phone"-->
+											<vue-tel-input
+											:preferred-countries="['us', 'ca']"
+											defaultCountry="US"
+											:valid-characters-only="true"
+											@input="onInput"/>
 											<div class="input-group-append">
 											<!--button class="btn btn-outline-secondary" type="button" v-on:click="register()"  :disabled="$v.phone.$error"  >Save</button-->
 											</div>
@@ -186,8 +189,11 @@ export default {
       loading: true,
       errored: false,
 	  resultless: null,
-	  email: null,
-	  phone: '',
+	  phone: {
+        number: '',
+        valid: false,
+        country: undefined,
+      },
 	  company: 'EdgeDx',
 	  testId: null,
 	  registerContent: {},
@@ -205,9 +211,8 @@ export default {
 			email
 		},
 		phone: {
-			minLength: minLength(10),
-			maxLength: maxLength(10),
-			numeric
+			minLength: minLength(14),
+			maxLength: maxLength(14),
 	}
 	
 	},
@@ -242,11 +247,12 @@ export default {
 				this.errored = false;
 				this.resultless = null;
 				this.testId = null;
-				this.email = null;
+				this.email = '';
 				this.registerNotification = false;
 				this.btnRegisterDisplay = true;
-				this.phone = '';
-				
+				this.phone.number = '';
+				this.phone.valid = false;
+				this.phone.country = undefined;
 			},
 			register: function(){
 
@@ -254,7 +260,7 @@ export default {
                     email: this.email,
                     sample_id: this.testId,
 					notification_sent: 0,
-					phone_number: this.phone
+					phone_number: this.phone.number
                 };
 				//Aqui se envia la información para crear la cita.
 				//console.log(this.registerContent);
@@ -268,21 +274,26 @@ export default {
 			validate: function(){
 				
 				this.validEmail = this.$v.email.valid;
-				this.validPhone = this.$v.phone.valid;
-			}
+				this.validPhone = this.phone.valid;
+			},
+			onInput(formattedNumber, { number, valid, country }) {
+				//this.phone.number = number.e164;
+				this.phone.number = number.input;
+				this.phone.valid = valid;
+				this.phone.country = country && country.name;
+				
+				if (this.phone.valid === true){
+				this.invalid=false;
+				}else{
+					this.invalid=true;
+				}
+			},
 
 
   },
   watch:{
 		email: function(){
 			if (this.$v.email.$invalid === false){
-				this.invalid=false;
-			}else{
-				this.invalid=true;
-			}
-		},
-		phone: function(){
-			if (this.$v.phone.$invalid === false){
 				this.invalid=false;
 			}else{
 				this.invalid=true;

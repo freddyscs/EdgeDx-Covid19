@@ -104,7 +104,7 @@
     "resultsBasicPhone": "If you have a basic phone, please enter you phone number and you will get text message with your test result as soon as it is available",
     "resultsPhonePlaceholder": "US Phone - Enter 10 digits (xxx)yyy-zzzz",
     "resultsInvalidPhone": "Please enter a valid Phone number",
-    "resultsEmailSent": "Your Email notification has been set. You will receive an Email as soon as we get the results.",
+    "resultsEmailSent": "Your Email/Phone notification has been set. You will receive an message as soon as we get the results.",
     "resultSummary": "Result summary for ",
     "resultSampleDate": "Sample Date",
     "resultDate": "Result Date",
