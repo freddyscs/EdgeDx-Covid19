@@ -98,7 +98,6 @@
 											defaultCountry="US"
 											:valid-characters-only="true"
 											@input="onInput"/>
-											{{phone.number}}
 											<div class="input-group-append">
 											<!--button class="btn btn-outline-secondary" type="button" v-on:click="register()"  :disabled="$v.phone.$error"  >Save</button-->
 											</div>
