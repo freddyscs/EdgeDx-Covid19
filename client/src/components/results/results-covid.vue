@@ -93,7 +93,12 @@
 											 id="phone" 
 											 @blur="$v.phone.$touch()"
 											v-model="phone"-->
-											<VuePhoneNumberInput default-country-code="US" size="lg" @blur="$v.phone.$touch()"  @update="phoneResults = JSON.stringify($event)" v-model="phone"/>
+											<vue-tel-input
+											:preferred-countries="['us', 'ca']"
+											defaultCountry="US"
+											:valid-characters-only="true"
+											@input="onInput"/>
+											{{phone.number}}
 											<div class="input-group-append">
 											<!--button class="btn btn-outline-secondary" type="button" v-on:click="register()"  :disabled="$v.phone.$error"  >Save</button-->
 											</div>
@@ -166,7 +171,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 import {required, email, minLength, numeric, maxLength} from 'vuelidate/lib/validators'
-import VuePhoneNumberInput from 'vue-phone-number-input'
+
 
 //const baseUrl = "http://myrawdata.com:8080/rawdata/api/getTestResult/";
 const baseUrl = "http://www.myrawdata.com:3000/genexperts/?filter[where][sample_id]="
@@ -177,9 +182,6 @@ function buildUrl (key) {
 
 
 export default {
-     components: {
-      VuePhoneNumberInput
-	},
 	data () {
     return {
 	  url: null,	
@@ -189,9 +191,11 @@ export default {
       loading: true,
       errored: false,
 	  resultless: null,
-	  email: null,
-	  phone: '',
-	  phoneFormatted: '',
+	  phone: {
+        number: '',
+        valid: false,
+        country: undefined,
+      },
 	  company: 'EdgeDx',
 	  testId: null,
 	  registerContent: {},
@@ -211,7 +215,7 @@ export default {
 		},
 		phone: {
 			minLength: minLength(14),
-			maxLength: maxLength(14)
+			maxLength: maxLength(14),
 	}
 	
 	},
@@ -246,12 +250,12 @@ export default {
 				this.errored = false;
 				this.resultless = null;
 				this.testId = null;
-				this.email = null;
+				this.email = '';
 				this.registerNotification = false;
 				this.btnRegisterDisplay = true;
-				this.phone = '';
-				this.phoneFormatted = '';
-				
+				this.phone.number = '';
+				this.phone.valid = false;
+				this.phone.country = undefined;
 			},
 			register: function(){
 
@@ -259,7 +263,7 @@ export default {
                     email: this.email,
                     sample_id: this.testId,
 					notification_sent: 0,
-					phone_number: this.phoneFormatted
+					phone_number: this.phone.number
                 };
 				//Aqui se envia la información para crear la cita.
 				//console.log(this.registerContent);
@@ -273,8 +277,20 @@ export default {
 			validate: function(){
 				
 				this.validEmail = this.$v.email.valid;
-				this.validPhone = this.$v.phone.valid;
-			}
+				this.validPhone = this.phone.valid;
+			},
+			onInput(formattedNumber, { number, valid, country }) {
+				//this.phone.number = number.e164;
+				this.phone.number = number.input;
+				this.phone.valid = valid;
+				this.phone.country = country && country.name;
+				
+				if (this.phone.valid === true){
+				this.invalid=false;
+				}else{
+					this.invalid=true;
+				}
+			},
 
 
   },
@@ -282,16 +298,6 @@ export default {
 		email: function(){
 			if (this.$v.email.$invalid === false){
 				this.invalid=false;
-			}else{
-				this.invalid=true;
-			}
-		},
-		phone: function(){
-			let phoneValidation = JSON.parse(this.phoneResults);
-			
-			if (phoneValidation['isValid'] === true){
-				this.invalid=false;
-				this.phoneFormatted = phoneValidation['nationalNumber'];
 			}else{
 				this.invalid=true;
 			}

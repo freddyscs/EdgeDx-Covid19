@@ -28,12 +28,14 @@ import VueRouter from 'vue-router';
 import Results from './components/results/results-covid.vue'
 import { routes } from './routes';
 import VueI18n from 'vue-i18n';
-import VuePhoneNumberInput from 'vue-phone-number-input';
+import VueTelInput from 'vue-tel-input'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import Axios from 'axios';
 
+
+ 
 
 Vue.component('edgedx-header', Header)
 Vue.component('edgedx-footer', Footer)
@@ -59,14 +61,13 @@ Vue.component('edgedx-qrcodevue', QrcodeVue)
 Vue.component('edgedx-login', Login)
 Vue.component('edgedx-results', Results)
 Vue.component('edgedx-dashboard', Dashboard)
-Vue.component('vue-phone-number-input', VuePhoneNumberInput);
-import 'vue-phone-number-input/dist/vue-phone-number-input.css';
 
 
 Vue.use(BootstrapVue);
 Vue.use(Vuelidate);
 Vue.use(VueRouter);
 Vue.use(VueI18n);
+Vue.use(VueTelInput);
 
 Axios.defaults.baseURL = 'http://www.myrawdata.com:3000/';
 Axios.defaults.headers.common['Authorization'] = '';
