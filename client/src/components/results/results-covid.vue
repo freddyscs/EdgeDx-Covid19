@@ -71,7 +71,7 @@
 										<p>{{ $t('message.resultsEmailAddress') }}</p>
 									</div>
 									<div class="row" >
-										<div class="input-group">
+										<div class="input-group col-md-6 col-sm-12">
 											<input type="text" class="form-control"  v-bind:placeholder="$t('message.resultsEmailPlaceholder')"
 											 id="email" 
 												@blur="$v.email.$touch()"
@@ -88,20 +88,12 @@
 										<p>{{ $t('message.resultsBasicPhone') }}</p>
 									</div>
 									<div class="row" >
-										<div class="input-group">
-											<!--input type="text" class="form-control" v-bind:placeholder="$t('message.resultsPhonePlaceholder')"
-											 id="phone" 
-											 @blur="$v.phone.$touch()"
-											v-model="phone"-->
-											<vue-tel-input
+										<div class="input-group col-md-6 col-sm-12">
+											<vue-tel-input 
 											:preferred-countries="['us', 'ca']"
 											defaultCountry="US"
 											:valid-characters-only="true"
-											@input="onInput"/>
-											<div class="input-group-append">
-											<!--button class="btn btn-outline-secondary" type="button" v-on:click="register()"  :disabled="$v.phone.$error"  >Save</button-->
-											</div>
-											 
+											@input="onInput"/>											 
 										</div>
 										<div v-if="$v.phone.$error" class="errorMsj"><p>{{ $t('message.resultsInvalidPhone') }}</p></div>
 									</div>
