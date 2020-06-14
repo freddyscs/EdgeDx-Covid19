@@ -93,6 +93,7 @@
 											 id="phone" 
 											 @blur="$v.phone.$touch()"
 											v-model="phone">
+											{{phone}}
 												
 											<div class="input-group-append">
 											<!--button class="btn btn-outline-secondary" type="button" v-on:click="register()"  :disabled="$v.phone.$error"  >Save</button-->
