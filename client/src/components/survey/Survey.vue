@@ -203,6 +203,7 @@ export default {
       this.loadingShow = true;
       this.postSurvey();
       //Based on corona result, show the respective panel
+      //TO DO get corona scores from data base.
       if (this.sCorona < 10){
         this.sGreenShow = true;
         console.log("green");

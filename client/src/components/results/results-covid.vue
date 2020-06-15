@@ -59,7 +59,7 @@
 					<section v-else-if="resultless">
 						<br>
 						<br>
-						<div class="text-center alert alert-warning" role="alert" v-show="!registerNotification">
+						<div class="text-center alert alert-success" role="alert" v-show="!registerNotification">
 								{{ $t('message.resultsNotFound', {testId}) }} 
 						</div>
 						<!-- EMAIL-->
@@ -88,14 +88,16 @@
 										<p>{{ $t('message.resultsBasicPhone') }}</p>
 									</div>
 									<div class="row" >
-										<div class="input-group col-md-6 col-sm-12">
+										<div class="input-group col-md-6 col-sm-12" >
 											<vue-tel-input 
 											:preferred-countries="['us', 'ca']"
 											defaultCountry="US"
+											v-bind:placeholder="$t('message.resultsPhonePlaceholder')"
 											:valid-characters-only="true"
 											@input="onInput"/>											 
 										</div>
 										<div v-if="$v.phone.$error" class="errorMsj"><p>{{ $t('message.resultsInvalidPhone') }}</p></div>
+										
 									</div>
 								</div>	
 							</div>
@@ -271,8 +273,8 @@ export default {
 				this.validPhone = this.phone.valid;
 			},
 			onInput(formattedNumber, { number, valid, country }) {
-				//this.phone.number = number.e164;
-				this.phone.number = number.input;
+				this.phone.number = number.e164;
+				//this.phone.number = number.input;
 				this.phone.valid = valid;
 				this.phone.country = country && country.name;
 				

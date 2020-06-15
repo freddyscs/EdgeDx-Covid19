@@ -102,7 +102,7 @@
     "resultsEmailAddress": "Please enter your Email address and press the 'Save' button if you want to receive the results via Email once available",
     "resultsInvalidEmailAddress": "Please enter a valid Email address",
     "resultsBasicPhone": "If you have a basic phone, please enter you phone number and you will get text message with your test result as soon as it is available",
-    "resultsPhonePlaceholder": "US Phone - Enter 10 digits (xxx)yyy-zzzz",
+    "resultsPhonePlaceholder": "Phone number",
     "resultsInvalidPhone": "Please enter a valid Phone number",
     "resultsEmailSent": "Your Email/Phone notification has been set. You will receive an message as soon as we get the results.",
     "resultSummary": "Result summary for ",
@@ -122,5 +122,6 @@
     "PleaseSignIn": "Please sign in",
     "EmailAddress": "Email Address",
     "Password": "Password",
-    "Email": "Email"
+    "Email": "Email",
+    "loginInvalidCredentials": "Invalid email or password"
   }

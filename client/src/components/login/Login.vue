@@ -11,11 +11,15 @@
                 <label>
                 <input type="checkbox" value="remember-me"> Remember me
                 </label>
+                <div class="text-center alert alert-danger" role="alert" v-show="invalidCredentials">
+								{{ $t('message.loginInvalidCredentials') }}
+						    </div>
             </div>
             <button type="button" class="btn btn-lg btn-primary btn-block"  v-on:click="login()" >{{ $t('message.SignIn') }}</button>
             <button type="button" class="btn btn-lg btn-primary btn-block"  v-on:click="killToken()" >kill token</button>
         </form>
         {{token}}
+        freddyscs@hotmail.com|1234567890
     </div>
 </template>
 
@@ -33,6 +37,7 @@ export default {
           email: '',
           password: '',
           credentials: {},
+          invalidCredentials: false
         }
     },
     methods:{
@@ -50,7 +55,9 @@ export default {
             
             })
             .catch(error => {
-            console.log(error);
+            this.invalidCredentials = true;
+            console.log("this is the error", error);
+            
             
             })
             .finally(() => {
