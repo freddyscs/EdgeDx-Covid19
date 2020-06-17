@@ -15,7 +15,7 @@
                     <!--a class="nav-link" href="#">Administration <span class="sr-only">(current)</span></a-->
                 </li>
                 <li class="nav-item">
-                    <!--a class="nav-link" href="#">Link</a-->
+                    <a class="nav-link" href="/ca">California</a>
                 </li>
                 </ul>
                 <form class="form-inline my-2 my-md-0">

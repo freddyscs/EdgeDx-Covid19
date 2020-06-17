@@ -29,6 +29,10 @@ import Results from './components/results/results-covid.vue'
 import { routes } from './routes';
 import VueI18n from 'vue-i18n';
 import VueTelInput from 'vue-tel-input'
+import SurveyCa from './components/survey-ca/SurveyCa.vue'
+import SurveyCaStart from './components/survey-ca/SurveyCaStart.vue'
+import SurveyCaPersonal from './components/survey-ca/SurveyCaPersonal.vue'
+import SurveyCaSymptoms from './components/survey-ca/SurveyCaSymptoms.vue'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -44,6 +48,7 @@ Vue.component('edgedx-form', Form)
 
 Vue.component('edgedx-FormBase', FormBase)
 Vue.component('edgedx-FormStart', FormStart)
+//General Survey
 Vue.component('edgedx-Survey', Survey)
 Vue.component('edgedx-SurveyEmail', SurveyEmail)
 Vue.component('edgedx-SurveySymptoms', SurveySymptoms)
@@ -58,6 +63,14 @@ Vue.component('edgedx-Appointment', Appointment)
 Vue.component('edgedx-AppointmentDate', AppointmentDate)
 Vue.component('edgedx-AppointmentDummy', AppointmentDummy)
 Vue.component('edgedx-qrcodevue', QrcodeVue)
+//California Survey
+Vue.component('edgedx-SurveyCa', SurveyCa)
+Vue.component('edgedx-SurveyCaStart', SurveyCaStart)
+Vue.component('edgedx-SurveyCaPersonal', SurveyCaPersonal)
+Vue.component('edgedx-SurveyCaSymptoms', SurveyCaSymptoms)
+
+
+
 Vue.component('edgedx-login', Login)
 Vue.component('edgedx-results', Results)
 Vue.component('edgedx-dashboard', Dashboard)
