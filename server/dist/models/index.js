@@ -11,4 +11,5 @@ tslib_1.__exportStar(require("./appointment.model"), exports);
 tslib_1.__exportStar(require("./result-notification.model"), exports);
 tslib_1.__exportStar(require("./rawdata-role.model"), exports);
 tslib_1.__exportStar(require("./rawdata-user.model"), exports);
+tslib_1.__exportStar(require("./survey-ca.model"), exports);
 //# sourceMappingURL=index.js.map

@@ -8,3 +8,4 @@ export * from './appointment.model';
 export * from './result-notification.model';
 export * from './rawdata-role.model';
 export * from './rawdata-user.model';
+export * from './survey-ca.model';

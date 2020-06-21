@@ -33,6 +33,8 @@ import SurveyCa from './components/survey-ca/SurveyCa.vue'
 import SurveyCaStart from './components/survey-ca/SurveyCaStart.vue'
 import SurveyCaPersonal from './components/survey-ca/SurveyCaPersonal.vue'
 import SurveyCaSymptoms from './components/survey-ca/SurveyCaSymptoms.vue'
+import SurveyCaAppointment from './components/survey-ca/SurveyCaAppointment.vue'
+import SurveyCaDummyAppointment from './components/survey-ca/SurveyCaDummyAppointment.vue'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -68,6 +70,9 @@ Vue.component('edgedx-SurveyCa', SurveyCa)
 Vue.component('edgedx-SurveyCaStart', SurveyCaStart)
 Vue.component('edgedx-SurveyCaPersonal', SurveyCaPersonal)
 Vue.component('edgedx-SurveyCaSymptoms', SurveyCaSymptoms)
+Vue.component('edgedx-SurveyCaAppointment', SurveyCaAppointment)
+Vue.component('edgedx-SurveyCaDummyAppointment', SurveyCaDummyAppointment)
+
 
 
 

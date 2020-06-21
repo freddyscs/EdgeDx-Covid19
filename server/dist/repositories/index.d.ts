@@ -8,3 +8,4 @@ export * from './appointment.repository';
 export * from './result-notification.repository';
 export * from './rawdata-role.repository';
 export * from './rawdata-user.repository';
+export * from './survey-ca.repository';

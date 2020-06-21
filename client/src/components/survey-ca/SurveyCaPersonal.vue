@@ -4,7 +4,7 @@
 				<div class="row">
 					<div class="col padding-box">
                            <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 						<h2 class="padding-box">{{ $t('message.caPresonalTitle') }}</h2>
                         <p class="lead padding-subtitle">{{ $t('message.caPresonalSubTitle') }}</p>
@@ -13,33 +13,33 @@
                             <div class="row custom-control form-group">
                                 <label>{{ $t('message.caName') }}.</label>
                                 <div class="col-sm-6 col-md-4">
-                                 <input type="text" class="form-control" v-bind:placeholder="$t('message.caNameInput')"  id="name">
+                                 <input type="text" class="form-control" v-bind:placeholder="$t('message.caNameInput')"  id="name"  v-model="sCaPersonal.name">
                                 </div>
                             </div>
                             <div class="row custom-control form-group">
                                 <div class="col-sm-4 col-md-2">
-                                <input type="text" class="form-control" v-bind:placeholder="$t('message.caNamemMiddleInput')"  id="middle">
+                                <input type="text" class="form-control" v-bind:placeholder="$t('message.caNamemMiddleInput')"  id="middle"  v-model="sCaPersonal.middle">
                                 </div>
                             </div>
                             <div class="row custom-control form-group">
                                 <div class="col-sm-8 col-md-4">
-                               <input type="text" class="form-control" v-bind:placeholder="$t('message.caLastNameInput')"  id="last">
+                               <input type="text" class="form-control" v-bind:placeholder="$t('message.caLastNameInput')"  id="last"  v-model="sCaPersonal.lastname">
                                 </div>
                             </div>
 							<div class="row custom-control form-group">
 								<label for="exampleFormControlSelect4">{{ $t('message.dateOfBirth') }}</label>
-								 <b-form-datepicker id="example-datepicker"  v-model="date" class="col-sm-10 col-md-4"  v-bind:placeholder="$t('message.appointmentDatePicker')"></b-form-datepicker>
+								 <b-form-datepicker id="example-datepicker"  v-model="date" class="col-md-6 col-11"  v-bind:placeholder="$t('message.appointmentDatePicker')"></b-form-datepicker>
 							</div>
                             <div class="row custom-control form-group">
 								<label for="exampleFormControlSelect4">{{ $t('message.presonalGender') }}</label>
-                                <button type="button" class="btn btn-sm btn-outline-info " data-toggle="modal" @click="showDialog('gender')" data-target="#exampleModalCenter">?</button>
-								<select class="form-control col-md-4 col-sm-10" id="gender" >
+                                <button type="button" class="btn btn-sm btn-outline-info " data-toggle="modal" @click="showDialog('gender')" data-target="#exampleModalCenter" >?</button>
+								<select class="form-control col-md-3 col-10" id="gender" v-model="sCaPersonal.gender">
 									<option>{{ $t('message.presonalGenderMale') }}</option>
 									<option>{{ $t('message.presonalGenderFemale') }}</option>
 									<option>{{ $t('message.presonalGenderInter') }}</option>
 								</select>
 							</div>
-                            <div class="row custom-control form-group col-md-4 col-sm-6" >
+                            <div class="row custom-control form-group col-md-4 col-12" >
                                         <label for="exampleFormControlSelect4">{{ $t('message.sCaPhone') }}</label>
 										<div >
 											<vue-tel-input 
@@ -53,9 +53,9 @@
                             <div class="row custom-control form-group">
                                     <label for="exampleFormControlSelect4">{{ $t('message.homeAddress') }} </label>
                                     <button type="button" class="btn btn-sm btn-outline-info " data-toggle="modal" @click="showDialog('address')" data-target="#exampleModalCenter">?</button>
-                                    <input type="text" class="form-control form-group col-md-4 col-sm-6"  v-bind:placeholder="$t('message.sCaStreet')" v-model="street"> 
-                                    <input type="text" class="form-control form-group col-md-4 col-sm-6"  v-bind:placeholder="$t('message.sCaCity')" v-model="city"> 
-                                    <select class="form-control form-group  col-md-4 col-sm-6" v-model="state" >
+                                    <input type="text" class="form-control form-group col-md-4 col-10"  v-bind:placeholder="$t('message.sCaStreet')" v-model="sCaPersonal.street"> 
+                                    <input type="text" class="form-control form-group col-md-4 col-10"  v-bind:placeholder="$t('message.sCaCity')" v-model="sCaPersonal.city"> 
+                                    <select class="form-control form-group  col-md-4 col-10" v-model="sCaPersonal.state" >
                                         <option>Alabama</option>
                                         <option>Alaska</option>
                                         <option>Arizona</option>
@@ -107,14 +107,14 @@
                                         <option>Wisconsin</option>
                                         <option>Wyoming</option>
 								</select>
-                                    <input type="text" class="form-control form-group col-md-3 col-sm-4"  v-bind:placeholder="$t('message.appointmentDZipCodePlaceholder')" v-model="zipcode"> 
+                                    <input type="text" class="form-control form-group col-md-3 col-10"  v-bind:placeholder="$t('message.appointmentDZipCodePlaceholder')" v-model="sCaPersonal.zipcode"> 
                             </div>
                             
                             
 							<div class="row custom-control form-group">
 								<label for="exampleFormControlSelect4">{{ $t('message.CaEthnicity') }}</label>
                                 <button type="button" class="btn btn-sm btn-outline-info " data-toggle="modal" @click="showDialog('race')" data-target="#exampleModalCenter">?</button>
-								<select class="form-control col-md-4" id="ethnicity" v-model="latino">
+								<select class="form-control col-md-4 col-10" id="ethnicity" v-model="sCaPersonal.latino">
 									<option>{{ $t('message.yes') }}</option>
 									<option>{{ $t('message.no') }}</option>
 									<option>{{ $t('message.NotSure') }}</option>
@@ -123,7 +123,7 @@
 							</div>
                             <div class="row custom-control form-group">
 								<label for="exampleFormControlSelect4">{{ $t('message.CaRace') }}</label>
-								<select class="form-control col-md-4" id="ethnicity" v-model="race">
+								<select class="form-control col-md-4 col-10" id="ethnicity" v-model="sCaPersonal.race">
 									<option>{{ $t('message.presonalEthnicityWhite') }}</option>
 									<option>{{ $t('message.presonalEthnicityBlack') }}</option>
 									<option>{{ $t('message.presonalEthnicityNative') }}</option>
@@ -141,7 +141,7 @@
 					<div class="input-group-append">
 						<!--button class="btn btn-outline-dark btn-lg float-left" type="button" v-on:click="back()">Back</button-->
 						<!--button class="btn btn-outline-secondary btn-lg" type="button" v-on:click="next()" :disabled="!acknowledge">Analyze Answers</button-->
-						<button class="btn btn-outline-success btn-lg" type="button" v-on:click="next()">{{ $t('message.continue') }}</button>
+						<button class="btn btn-success btn-lg" type="button" v-on:click="next()">{{ $t('message.continue') }}</button>
 					</div>
 				</div>
 			</div>	
@@ -161,7 +161,7 @@ export default {
                 phoneNumber: '',
                 street: '',
                 city: '',
-                state: '',
+                state: 'California',
                 zipcode: '',
                 latino: '',
                 race: ''
@@ -186,11 +186,11 @@ export default {
     methods:{
         showDialog: function(item){
             if(item === 'gender'){
-                alert("Genero");
+                alert("The lab that processes tests uses sex as one of the ways it makes sure its processes are accurate.");
             }else if (item === 'race'){
-                alert("Raza")    
+                alert("These questions are part of federal reporting guidelines to help agencies better respond to health challenges and make sure funds are used in a nondiscriminatory manner.")    
             }else if (item === 'address'){
-                alert("address")    
+                alert("Your information will be used to contact you if needed")    
             }
         },
         onInput(formattedNumber, { number, valid, country }) {
@@ -206,7 +206,11 @@ export default {
 				}
             },
         next(){
-            this.sCaPersonal.number = 1;
+            //Adding dateofbirth
+            this.sCaPersonal.dateOfBirth = this.date;
+            this.sCaPersonal.phoneNumber = this.phone.number;
+            
+            //console.log("emitido", this.sCaPersonal)
             this.$emit('sCaPersonal', this.sCaPersonal);
         }
     },

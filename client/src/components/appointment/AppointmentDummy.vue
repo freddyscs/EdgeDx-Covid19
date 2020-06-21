@@ -62,6 +62,9 @@ const Url = "/places";
 const UrlAppointment = "/appointments";
 
 export default {
+    created() {
+    console.log('Component has been created!');
+    },
     data: function() {
         return {
             date: '',

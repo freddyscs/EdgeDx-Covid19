@@ -12,4 +12,5 @@ tslib_1.__exportStar(require("./appointment.controller"), exports);
 tslib_1.__exportStar(require("./result-notification.controller"), exports);
 tslib_1.__exportStar(require("./rawdata-role.controller"), exports);
 tslib_1.__exportStar(require("./rawdata-user.controller"), exports);
+tslib_1.__exportStar(require("./survey-ca.controller"), exports);
 //# sourceMappingURL=index.js.map

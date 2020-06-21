@@ -6,7 +6,7 @@
 			<div class="row justify-content-center" >
 				<div class="col-md-6 col-sm-12 align-self-center logo-margin" >
 				<div class="row justify-content-center">
-					<img src="../../assets/images/california-flag-sm.png">
+					<img src="../../assets/images/california-flag-xsm.png">
 				 </div>
 			</div>
 			</div>
@@ -51,10 +51,10 @@ export default {
 <style scoped>
 .form-box {
 	border: 1px solid #eee;
-	box-shadow: 5px 5px 30px #aaa;
+	box-shadow: 2px 2px 10px #aaa;
 	margin: 2% auto;
  }
  .padding-box{
-	 padding: 2%;
+	 padding: 4%;
  }
 </style>

@@ -9,3 +9,4 @@ export * from './appointment.controller';
 export * from './result-notification.controller';
 export * from './rawdata-role.controller';
 export * from './rawdata-user.controller';
+export * from './survey-ca.controller';

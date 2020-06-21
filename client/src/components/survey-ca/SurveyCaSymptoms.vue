@@ -4,7 +4,7 @@
 				<div class="row">
 					<div class="col padding-box">
                         <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 						<h2 class="padding-box">{{ $t('message.caSymptomsTitle') }}</h2>
 						<hr class="mb-3">
@@ -13,7 +13,7 @@
                             <div class="row custom-control form-group">
 									<label for="exampleFormControlSelect2">{{ $t('message.caSymptomsContact1') }}</label>
                                     <label for="exampleFormControlSelect2">{{ $t('message.caSymptomsContact2') }}</label>
-									<select class="form-control col-md-4" id="contact" >
+									<select class="form-control col-md-4 col-10" id="contact" v-model="sCaSymptoms.contact" >
 										<option>{{ $t('message.yes') }}</option>
 										<option>{{ $t('message.no') }}</option>
 									</select>
@@ -22,7 +22,7 @@
                             <!-- Q2-->
                                 <div class="row custom-control form-group">
 									<label for="exampleFormControlSelect2">{{ $t('message.caSymptomsAge') }}</label>
-									<select class="form-control col-md-4" id="older" >
+									<select class="form-control col-md-4 col-10" id="older"  v-model="sCaSymptoms.older" >
 										<option>{{ $t('message.yes') }}</option>
 										<option>{{ $t('message.no') }}</option>
 									</select>
@@ -32,19 +32,19 @@
                                 <div class="col padding-box">
                                     <label for="exampleFormControlSelect4">{{ $t('message.caWork') }}</label>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkWork1">
+                                        <input type="checkbox" class="custom-control-input" id="chkWork1" v-model="sCaSymptoms.caWork1">
                                         <label class="custom-control-label" for="chkWork1">{{ $t('message.caWork1') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkWork2" >
+                                        <input type="checkbox" class="custom-control-input" id="chkWork2" v-model="sCaSymptoms.caWork2">
                                         <label class="custom-control-label" for="chkWork2">{{ $t('message.caWork2') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkWork3">
+                                        <input type="checkbox" class="custom-control-input" id="chkWork3" v-model="sCaSymptoms.caWork3">
                                         <label class="custom-control-label" for="chkWork3">{{ $t('message.caWork3') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkWork4" >
+                                        <input type="checkbox" class="custom-control-input" id="chkWork4" v-model="sCaSymptoms.caWork4" >
                                         <label class="custom-control-label" for="chkWork4">{{ $t('message.caNone') }}</label>
                                     </div>
                                 </div>
@@ -53,47 +53,47 @@
                                 <div class="col padding-box">
                                     <label for="exampleFormControlSelect4">{{ $t('message.caSymptoms') }}</label>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms1">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms1" v-model="sCaSymptoms.chkSymptoms1">
                                         <label class="custom-control-label" for="chkSymptoms1">{{ $t('message.caSymptoms1') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms2" >
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms2" v-model="sCaSymptoms.chkSymptoms2">
                                         <label class="custom-control-label" for="chkSymptoms2">{{ $t('message.caSymptoms2') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms3">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms3" v-model="sCaSymptoms.chkSymptoms3">
                                         <label class="custom-control-label" for="chkSymptoms3">{{ $t('message.caSymptoms3') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms4">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms4" v-model="sCaSymptoms.chkSymptoms4">
                                         <label class="custom-control-label" for="chkSymptoms4">{{ $t('message.caSymptoms4') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms5">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms5" v-model="sCaSymptoms.chkSymptoms5">
                                         <label class="custom-control-label" for="chkSymptoms5">{{ $t('message.caSymptoms5') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms6">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms6" v-model="sCaSymptoms.chkSymptoms6">
                                         <label class="custom-control-label" for="chkSymptoms6">{{ $t('message.caSymptoms6') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms7">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms7" v-model="sCaSymptoms.chkSymptoms7">
                                         <label class="custom-control-label" for="chkSymptoms7">{{ $t('message.caSymptoms7') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms8">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms8" v-model="sCaSymptoms.chkSymptoms8">
                                         <label class="custom-control-label" for="chkSymptoms8">{{ $t('message.caSymptoms8') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms9">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms9" v-model="sCaSymptoms.chkSymptoms9">
                                         <label class="custom-control-label" for="chkSymptoms9">{{ $t('message.caSymptoms9') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms10">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms10" v-model="sCaSymptoms.chkSymptoms10">
                                         <label class="custom-control-label" for="chkSymptoms10">{{ $t('message.caSymptoms10') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms11">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptoms11" v-model="sCaSymptoms.chkSymptoms11">
                                         <label class="custom-control-label" for="chkSymptoms11">{{ $t('message.caNone') }}</label>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                             <div class="row custom-control form-group">
 									<label for="exampleFormControlSelect1">{{ $t('message.caSymptomsDays') }}</label>
                                     <button type="button" class="btn btn-sm btn-outline-info " data-toggle="modal" @click="showDialog('days')" data-target="#exampleModalCenter">?</button>
-									<select class="form-control col-md-4" id="days">
+									<select class="form-control col-md-4 col-10" id="days" v-model="sCaSymptoms.days">
 										<option>1</option>
 										<option>2</option>
 										<option>3</option>
@@ -114,7 +114,7 @@
                              <!-- Q6-->
                                 <div class="row custom-control form-group">
 									<label for="exampleFormControlSelect2">{{ $t('message.caConditions') }}</label>
-									<select class="form-control col-md-4" id="conditions" >
+									<select class="form-control col-md-4 col-10" id="conditions" v-model="sCaSymptoms.conditions">
 										<option>{{ $t('message.yes') }}</option>
 										<option>{{ $t('message.no') }}</option>
 									</select>
@@ -124,51 +124,51 @@
                             <div class="col padding-box">
                                     <label for="exampleFormControlSelect4">{{ $t('message.caSymptomsChronic') }}</label>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC1">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC1" v-model="sCaSymptoms.caSymptomsChronic1">
                                         <label class="custom-control-label" for="chkSymptomsC1">{{ $t('message.caSymptomsChronic1') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC2" >
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC2"  v-model="sCaSymptoms.caSymptomsChronic2">
                                         <label class="custom-control-label" for="chkSymptomsC2">{{ $t('message.caSymptomsChronic2') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC3">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC3"  v-model="sCaSymptoms.caSymptomsChronic3">
                                         <label class="custom-control-label" for="chkSymptomsC3">{{ $t('message.caSymptomsChronic3') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC4">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC4"  v-model="sCaSymptoms.caSymptomsChronic4">
                                         <label class="custom-control-label" for="chkSymptomsC4">{{ $t('message.caSymptomsChronic4') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC5">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC5"  v-model="sCaSymptoms.caSymptomsChronic5">
                                         <label class="custom-control-label" for="chkSymptomsC5">{{ $t('message.caSymptomsChronic5') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC6">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC6"  v-model="sCaSymptoms.caSymptomsChronic6">
                                         <label class="custom-control-label" for="chkSymptomsC6">{{ $t('message.caSymptomsChronic6') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC7">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC7"  v-model="sCaSymptoms.caSymptomsChronic7">
                                         <label class="custom-control-label" for="chkSymptomsC7">{{ $t('message.caSymptomsChronic7') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC8">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC8"  v-model="sCaSymptoms.caSymptomsChronic8">
                                         <label class="custom-control-label" for="chkSymptomsC8">{{ $t('message.caSymptomsChronic8') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC9">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC9"  v-model="sCaSymptoms.caSymptomsChronic9">
                                         <label class="custom-control-label" for="chkSymptomsC9">{{ $t('message.caSymptomsChronic9') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC10">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC10"  v-model="sCaSymptoms.caSymptomsChronic10">
                                         <label class="custom-control-label" for="chkSymptomsC10">{{ $t('message.caSymptomsChronic10') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC11">
-                                        <label class="custom-control-label" for="chkSymptomsC11">{{ $t('message.caSymptomsChronic10') }}</label>
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsC11"  v-model="sCaSymptoms.caSymptomsChronic11">
+                                        <label class="custom-control-label" for="chkSymptomsC11">{{ $t('message.caSymptomsChronic11') }}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsc12">
+                                        <input type="checkbox" class="custom-control-input" id="chkSymptomsc12"  v-model="sCaSymptoms.caSymptomsChronic12">
                                         <label class="custom-control-label" for="chkSymptomsc12">{{ $t('message.caNone') }}</label>
                                     </div>
                             </div>
@@ -176,7 +176,7 @@
                             <!-- Q8-->
                                 <div class="row custom-control form-group">
 									<label for="exampleFormControlSelect2">{{ $t('message.caPregnant') }}</label>
-									<select class="form-control col-md-4" id="pregnant" >
+									<select class="form-control col-md-4 col-10" id="pregnant" v-model="sCaSymptoms.pregnant">
 										<option>{{ $t('message.yes') }}</option>
 										<option>{{ $t('message.no') }}</option>
                                         <option>{{ $t('message.noApply') }}</option>
@@ -190,7 +190,7 @@
 					<div class="input-group-append">
 						<!--button class="btn btn-outline-dark btn-lg float-left" type="button" v-on:click="back()">Back</button-->
 						<!--button class="btn btn-outline-secondary btn-lg" type="button" v-on:click="next()" :disabled="!acknowledge">Analyze Answers</button-->
-						<button class="btn btn-outline-success btn-lg" type="button" v-on:click="next()">{{ $t('message.continue') }}</button>
+						<button class="btn btn-success btn-lg" type="button" v-on:click="next()">{{ $t('message.continue') }}</button>
 					</div>
 				</div>
 			</div>	
@@ -201,6 +201,42 @@
 export default {
     data: function() {
         return {
+        sCaSymptoms:{
+            contact: '',
+            older: '',
+            caWork1: false,
+            caWork2: false,
+            caWork3: false,
+            caWork4: false,
+            chkSymptoms1: false,
+            chkSymptoms2: false,
+            chkSymptoms3: false,
+            chkSymptoms4: false,
+            chkSymptoms5: false,
+            chkSymptoms6: false,
+            chkSymptoms7: false,
+            chkSymptoms8: false,
+            chkSymptoms9: false,
+            chkSymptoms10: false,
+            chkSymptoms11: false,
+            days: '1',
+            conditions: '',
+            caSymptomsChronic1: false,
+            caSymptomsChronic2: false,
+            caSymptomsChronic3: false,
+            caSymptomsChronic4: false,
+            caSymptomsChronic5: false,
+            caSymptomsChronic6: false,
+            caSymptomsChronic7: false,
+            caSymptomsChronic8: false,
+            caSymptomsChronic9: false,
+            caSymptomsChronic10: false,
+            caSymptomsChronic11: false,
+            caSymptomsChronic12: false,
+            pregnant: ''
+
+        }
+
         }
     },
     methods:{
@@ -209,6 +245,10 @@ export default {
                 alert("If you are not sure, please put down your best estimate.");
             }
         },
+        next(){            
+            //console.log("emitidoSymptoms", this.sCaSymptoms)
+            this.$emit('sCaSymptoms', this.sCaSymptoms);
+        }
     },
     Props: {
         

@@ -11,4 +11,5 @@ tslib_1.__exportStar(require("./appointment.repository"), exports);
 tslib_1.__exportStar(require("./result-notification.repository"), exports);
 tslib_1.__exportStar(require("./rawdata-role.repository"), exports);
 tslib_1.__exportStar(require("./rawdata-user.repository"), exports);
+tslib_1.__exportStar(require("./survey-ca.repository"), exports);
 //# sourceMappingURL=index.js.map

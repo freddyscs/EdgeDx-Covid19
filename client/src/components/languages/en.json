@@ -3,7 +3,7 @@
     "continue": "Continue",
     "yes": "Yes",
     "no": "No",
-    "back": "back",
+    "back": "Back",
     "hello": "Hello covid app",
     "SelectLanguage": "Select Language",
     "welcome": "Welcome to myrawdata",
@@ -178,6 +178,9 @@
     "caSymptomsChronic9": "Type 2 Diabetes",
     "caSymptomsChronic10": "Chronic renal disease",
     "caSymptomsChronic11": "Chronic hepatic disease",
-    "caSymptomsChronic12": "Other"
+    "CaAppointmentMessage1": "Next, we'll schedule your testing appointment",    
+    "CaAppointmentMessage2": "To get tested for COVID-19, system will schedule an appointment in the nearest available testing sites.",
+    "CaAppointmentMessage3": "Please click on 'Create Appointment' to schedule your test.",
+    "appointmentDTitleCa": "An appoinment based on you location information has been created."
 
   }
