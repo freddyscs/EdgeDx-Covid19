@@ -1,0 +1,52 @@
+import { Entity } from '@loopback/repository';
+export declare class SurveyCa extends Entity {
+    id?: number;
+    name?: string;
+    lastname?: string;
+    birth?: string;
+    gender?: string;
+    phone?: string;
+    street?: string;
+    city?: string;
+    state?: string;
+    zipcode?: string;
+    latino?: string;
+    race?: string;
+    contact?: string;
+    older?: string;
+    cawork1?: boolean;
+    cawork2?: string;
+    cawork3?: string;
+    cawork4?: string;
+    chksymptoms1?: string;
+    chksymptoms2?: string;
+    chksymptoms3?: string;
+    chksymptoms4?: string;
+    chksymptoms5?: string;
+    chksymptoms6?: string;
+    chksymptoms7?: string;
+    chksymptoms8?: string;
+    chksymptoms9?: string;
+    chksymptoms10?: string;
+    chksymptoms11?: string;
+    days?: string;
+    conditions?: string;
+    chkschronic1?: string;
+    chkschronic2?: string;
+    chkschronic3?: string;
+    chkschronic4?: string;
+    chkschronic5?: string;
+    chkschronic6?: string;
+    chkschronic7?: string;
+    chkschronic8?: string;
+    chkschronic9?: string;
+    chkschronic10?: string;
+    chkschronic11?: string;
+    chkschronic12?: string;
+    pregnant?: string;
+    [prop: string]: any;
+    constructor(data?: Partial<SurveyCa>);
+}
+export interface SurveyCaRelations {
+}
+export declare type SurveyCaWithRelations = SurveyCa & SurveyCaRelations;
