@@ -181,6 +181,14 @@
     "CaAppointmentMessage1": "Next, we'll schedule your testing appointment",    
     "CaAppointmentMessage2": "To get tested for COVID-19, system will schedule an appointment in the nearest available testing sites.",
     "CaAppointmentMessage3": "Please click on 'Create Appointment' to schedule your test.",
-    "appointmentDTitleCa": "An appoinment based on you location information has been created."
+    "appointmentDTitleCa": "An appoinment based on you location information has been created.",
+    "caValidName": "Please enter a valid name",
+    "caValidMiddleName": "Please enter a valid middle name",
+    "caValidLastname": "Please enter a valid last name",
+    "caValidStreet": "Please enter the Street name",
+    "caValidCity": "Please enter the City name",
+    "caValidZipcode": "Please enter a valid zipcode",
+    "caValidGender": "Please select a gender",
+    "caSelectOption": "Please select an option"
 
   }

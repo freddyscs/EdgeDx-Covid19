@@ -14,18 +14,22 @@
 									<label for="exampleFormControlSelect2">{{ $t('message.caSymptomsContact1') }}</label>
                                     <label for="exampleFormControlSelect2">{{ $t('message.caSymptomsContact2') }}</label>
 									<select class="form-control col-md-4 col-10" id="contact" v-model="sCaSymptoms.contact" >
+                                        <option>-</option>
 										<option>{{ $t('message.yes') }}</option>
 										<option>{{ $t('message.no') }}</option>
 									</select>
+                                     <div v-if="noContactShow" class="errorMsj"><p>{{ $t('message.caSelectOption') }}</p></div> 
 								</div>
                             <!-- Q1-->
                             <!-- Q2-->
                                 <div class="row custom-control form-group">
 									<label for="exampleFormControlSelect2">{{ $t('message.caSymptomsAge') }}</label>
 									<select class="form-control col-md-4 col-10" id="older"  v-model="sCaSymptoms.older" >
+                                        <option>-</option>
 										<option>{{ $t('message.yes') }}</option>
 										<option>{{ $t('message.no') }}</option>
 									</select>
+                                    <div v-if="noOlderShow" class="errorMsj"><p>{{ $t('message.caSelectOption') }}</p></div>
 								</div>
                             <!-- Q2-->
                             <!-- Q3-->
@@ -47,6 +51,7 @@
                                         <input type="checkbox" class="custom-control-input" id="chkWork4" v-model="sCaSymptoms.caWork4" >
                                         <label class="custom-control-label" for="chkWork4">{{ $t('message.caNone') }}</label>
                                     </div>
+                                    <div v-if="noWorkShow" class="errorMsj "><p>{{ $t('message.caSelectOption') }}</p></div>
                                 </div>
 							<!-- Q3-->
                             <!-- Q4-->
@@ -96,6 +101,7 @@
                                         <input type="checkbox" class="custom-control-input" id="chkSymptoms11" v-model="sCaSymptoms.chkSymptoms11">
                                         <label class="custom-control-label" for="chkSymptoms11">{{ $t('message.caNone') }}</label>
                                     </div>
+                                    <div v-if="noSymptomsShow" class="errorMsj "><p>{{ $t('message.caSelectOption') }}</p></div>
                                 </div>
 							<!-- Q4-->
                             <!-- Q5-->
@@ -103,21 +109,25 @@
 									<label for="exampleFormControlSelect1">{{ $t('message.caSymptomsDays') }}</label>
                                     <button type="button" class="btn btn-sm btn-outline-info " data-toggle="modal" @click="showDialog('days')" data-target="#exampleModalCenter">?</button>
 									<select class="form-control col-md-4 col-10" id="days" v-model="sCaSymptoms.days">
+                                        <option>-</option>
 										<option>1</option>
 										<option>2</option>
 										<option>3</option>
 										<option>4</option>
 										<option>{{ $t('message.symtoms5orMore') }}</option>
 									</select>
+                                     <div v-if="noDaysShow" class="errorMsj"><p>{{ $t('message.caSelectOption') }}</p></div>
 							</div>
                             <!-- Q5-->
                              <!-- Q6-->
                                 <div class="row custom-control form-group">
 									<label for="exampleFormControlSelect2">{{ $t('message.caConditions') }}</label>
 									<select class="form-control col-md-4 col-10" id="conditions" v-model="sCaSymptoms.conditions">
+                                        <option>-</option>
 										<option>{{ $t('message.yes') }}</option>
 										<option>{{ $t('message.no') }}</option>
 									</select>
+                                     <div v-if="noConditionShow" class="errorMsj"><p>{{ $t('message.caSelectOption') }}</p></div>
 								</div>
                             <!-- Q6-->
                             <!-- Q7-->
@@ -171,16 +181,19 @@
                                         <input type="checkbox" class="custom-control-input" id="chkSymptomsc12"  v-model="sCaSymptoms.caSymptomsChronic12">
                                         <label class="custom-control-label" for="chkSymptomsc12">{{ $t('message.caNone') }}</label>
                                     </div>
+                                    <div v-if="noSymptomsChronicShow" class="errorMsj "><p>{{ $t('message.caSelectOption') }}</p></div>
                             </div>
                             <!-- Q7-->
                             <!-- Q8-->
                                 <div class="row custom-control form-group">
 									<label for="exampleFormControlSelect2">{{ $t('message.caPregnant') }}</label>
 									<select class="form-control col-md-4 col-10" id="pregnant" v-model="sCaSymptoms.pregnant">
+                                        <option>-</option>
 										<option>{{ $t('message.yes') }}</option>
 										<option>{{ $t('message.no') }}</option>
                                         <option>{{ $t('message.noApply') }}</option>
 									</select>
+                                     <div v-if="noPregnantShow" class="errorMsj"><p>{{ $t('message.caSelectOption') }}</p></div>
 								</div>
                             <!-- Q8-->
 						<hr class="mb-4">
@@ -202,8 +215,8 @@ export default {
     data: function() {
         return {
         sCaSymptoms:{
-            contact: '',
-            older: '',
+            contact: '-',
+            older: '-',
             caWork1: false,
             caWork2: false,
             caWork3: false,
@@ -219,8 +232,8 @@ export default {
             chkSymptoms9: false,
             chkSymptoms10: false,
             chkSymptoms11: false,
-            days: '1',
-            conditions: '',
+            days: '-',
+            conditions: '-',
             caSymptomsChronic1: false,
             caSymptomsChronic2: false,
             caSymptomsChronic3: false,
@@ -233,9 +246,17 @@ export default {
             caSymptomsChronic10: false,
             caSymptomsChronic11: false,
             caSymptomsChronic12: false,
-            pregnant: ''
+            pregnant: '-'
 
-        }
+        },
+        noContactShow: false,
+        noOlderShow: false,
+        noDaysShow: false,
+        noConditionShow: false,
+        noPregnantShow: false,
+        noWorkShow: false,        
+        noSymptomsShow: false,
+        noSymptomsChronicShow: false
 
         }
     },
@@ -246,12 +267,93 @@ export default {
             }
         },
         next(){            
-            //console.log("emitidoSymptoms", this.sCaSymptoms)
-            this.$emit('sCaSymptoms', this.sCaSymptoms);
+            //validations
+            //add validations
+            if(this.sCaSymptoms.contact === '-'){
+                this.noContactShow = true;
+            }else if(this.sCaSymptoms.older === '-'){
+				    this.noOlderShow=true;
+            }else if(this.sCaSymptoms.caWork1 === false && 
+                        this.sCaSymptoms.caWork2 === false && 
+                        this.sCaSymptoms.caWork3 === false && 
+                        this.sCaSymptoms.caWork4 === false ){
+                 this.noWorkShow=true;
+            }else if(this.sCaSymptoms.chkSymptoms1 === false && 
+                        this.sCaSymptoms.chkSymptoms2 === false && 
+                        this.sCaSymptoms.chkSymptoms3 === false && 
+                        this.sCaSymptoms.chkSymptoms4 === false &&
+                        this.sCaSymptoms.chkSymptoms5 === false && 
+                        this.sCaSymptoms.chkSymptoms6 === false && 
+                        this.sCaSymptoms.chkSymptoms7 === false &&
+                        this.sCaSymptoms.chkSymptoms8 === false && 
+                        this.sCaSymptoms.chkSymptoms9 === false && 
+                        this.sCaSymptoms.chkSymptoms10 === false && 
+                        this.sCaSymptoms.chkSymptoms11 === false ){
+                this.noSymptomsShow=true;
+            }else if(this.sCaSymptoms.days === '-'){
+				    this.noDaysShow=true;
+			}else if(this.sCaSymptoms.conditions === '-'){
+				    this.noConditionShow=true;
+			}else if(this.sCaSymptoms.caSymptomsChronic1 === false && 
+                        this.sCaSymptoms.caSymptomsChronic2 === false && 
+                        this.sCaSymptoms.caSymptomsChronic3 === false && 
+                        this.sCaSymptoms.caSymptomsChronic4 === false &&
+                        this.sCaSymptoms.caSymptomsChronic5 === false && 
+                        this.sCaSymptoms.caSymptomsChronic6 === false && 
+                        this.sCaSymptoms.caSymptomsChronic7 === false &&
+                        this.sCaSymptoms.caSymptomsChronic8 === false && 
+                        this.sCaSymptoms.caSymptomsChronic9 === false && 
+                        this.sCaSymptoms.caSymptomsChronic10 === false && 
+                        this.sCaSymptoms.caSymptomsChronic11 === false && 
+                        this.sCaSymptoms.caSymptomsChronic12 === false ){
+                this.noSymptomsChronicShow=true;
+            }else if(this.sCaSymptoms.pregnant === '-'){
+				    this.noPregnantShow=true;
+            }else{
+                //console.log("emitidoSymptoms", this.sCaSymptoms)
+                 this.$emit('sCaSymptoms', this.sCaSymptoms);
+            }
+                     
+            
+            
+            
         }
     },
     Props: {
         
+    },
+    watch:{
+         'sCaSymptoms.contact': function(){
+            if(this.sCaSymptoms.contact === '-'){
+                this.noContactShow = true;
+            }else{
+                this.noContactShow = false;
+            }
+        },'sCaSymptoms.older': function(){
+            if(this.sCaSymptoms.older === '-'){
+                this.noOlderShow = true;
+            }else{
+                this.noOlderShow = false;
+            }
+        },'sCaSymptoms.days': function(){
+            if(this.sCaSymptoms.days === '-'){
+                this.noDaysShow = true;
+            }else{
+                this.noDaysShow = false;
+            }
+        },'sCaSymptoms.conditions': function(){
+            if(this.sCaSymptoms.conditions === '-'){
+                this.noConditionShow = true;
+            }else{
+                this.noConditionShow = false;
+            }
+        },'sCaSymptoms.pregnant': function(){
+            if(this.sCaSymptoms.pregnant === '-'){
+                this.noPregnantShow = true;
+            }else{
+                this.noPregnantShow = false;
+            }
+        }
     }
 }
 </script>
@@ -266,5 +368,7 @@ export default {
  }
  .padding-subtitle{
 	 padding: 0% 2% 0% 2%;
+ }.errorMsj{
+	 color: coral;
  }
 </style>

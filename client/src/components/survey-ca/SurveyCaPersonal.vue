@@ -13,17 +13,20 @@
                             <div class="row custom-control form-group">
                                 <label>{{ $t('message.caName') }}.</label>
                                 <div class="col-sm-6 col-md-4">
-                                 <input type="text" class="form-control" v-bind:placeholder="$t('message.caNameInput')"  id="name"  v-model="sCaPersonal.name">
+                                    <input type="text" class="form-control"  @blur="$v.sCaPersonal.name.$touch()" v-bind:placeholder="$t('message.caNameInput')"  id="name"  v-model="sCaPersonal.name">
+                                    <div v-if="$v.sCaPersonal.name.$error" class="errorMsj"><p>{{ $t('message.caValidName') }}</p></div>  
                                 </div>
                             </div>
                             <div class="row custom-control form-group">
                                 <div class="col-sm-4 col-md-2">
-                                <input type="text" class="form-control" v-bind:placeholder="$t('message.caNamemMiddleInput')"  id="middle"  v-model="sCaPersonal.middle">
+                                    <input type="text" class="form-control" @blur="$v.sCaPersonal.middle.$touch()" v-bind:placeholder="$t('message.caNamemMiddleInput')"  id="middle"  v-model="sCaPersonal.middle">
+                                    <div v-if="$v.sCaPersonal.middle.$error" class="errorMsj"><p>{{ $t('message.caValidMiddleName') }}</p></div>   
                                 </div>
                             </div>
                             <div class="row custom-control form-group">
                                 <div class="col-sm-8 col-md-4">
-                               <input type="text" class="form-control" v-bind:placeholder="$t('message.caLastNameInput')"  id="last"  v-model="sCaPersonal.lastname">
+                                    <input type="text" class="form-control" @blur="$v.sCaPersonal.lastname.$touch()" v-bind:placeholder="$t('message.caLastNameInput')"  id="lastname"  v-model="sCaPersonal.lastname">
+                                    <div v-if="$v.sCaPersonal.lastname.$error" class="errorMsj"><p>{{ $t('message.caValidLastname') }}</p></div>   
                                 </div>
                             </div>
 							<div class="row custom-control form-group">
@@ -33,12 +36,15 @@
                             <div class="row custom-control form-group">
 								<label for="exampleFormControlSelect4">{{ $t('message.presonalGender') }}</label>
                                 <button type="button" class="btn btn-sm btn-outline-info " data-toggle="modal" @click="showDialog('gender')" data-target="#exampleModalCenter" >?</button>
-								<select class="form-control col-md-3 col-10" id="gender" v-model="sCaPersonal.gender">
-									<option>{{ $t('message.presonalGenderMale') }}</option>
+								<select class="form-control col-md-3 col-10" id="gender" v-model="gender">
+									<option>-</option>
+                                    <option>{{ $t('message.presonalGenderMale') }}</option>
 									<option>{{ $t('message.presonalGenderFemale') }}</option>
 									<option>{{ $t('message.presonalGenderInter') }}</option>
 								</select>
+                                <div v-if="noGenderShow" class="errorMsj"><p>{{ $t('message.caValidGender') }}</p></div> 
 							</div>
+                              
                             <div class="row custom-control form-group col-md-4 col-12" >
                                         <label for="exampleFormControlSelect4">{{ $t('message.sCaPhone') }}</label>
 										<div >
@@ -49,13 +55,18 @@
 											:valid-characters-only="true"
 											@input="onInput"/>											 
 							                </div>
+                                            
+										<div v-if="phoneError" class="errorMsj"><p>{{ $t('message.resultsInvalidPhone') }}</p></div>
 							</div>
                             <div class="row custom-control form-group">
                                     <label for="exampleFormControlSelect4">{{ $t('message.homeAddress') }} </label>
                                     <button type="button" class="btn btn-sm btn-outline-info " data-toggle="modal" @click="showDialog('address')" data-target="#exampleModalCenter">?</button>
-                                    <input type="text" class="form-control form-group col-md-4 col-10"  v-bind:placeholder="$t('message.sCaStreet')" v-model="sCaPersonal.street"> 
-                                    <input type="text" class="form-control form-group col-md-4 col-10"  v-bind:placeholder="$t('message.sCaCity')" v-model="sCaPersonal.city"> 
-                                    <select class="form-control form-group  col-md-4 col-10" v-model="sCaPersonal.state" >
+                                    <input type="text" class="form-control form-group col-md-4 col-10"  @blur="$v.sCaPersonal.street.$touch()"  v-bind:placeholder="$t('message.sCaStreet')" v-model="sCaPersonal.street"> 
+                                    <div v-if="$v.sCaPersonal.street.$error" class="errorMsj"><p>{{ $t('message.caValidStreet') }}</p></div>   
+
+                                    <input type="text" class="form-control form-group col-md-4 col-10" @blur="$v.sCaPersonal.city.$touch()"  v-bind:placeholder="$t('message.sCaCity')" v-model="sCaPersonal.city"> 
+                                    <div v-if="$v.sCaPersonal.city.$error" class="errorMsj"><p>{{ $t('message.caValidCity') }}</p></div>   
+                                    <select class="form-control form-group   col-md-4 col-10" v-model="sCaPersonal.state" >
                                         <option>Alabama</option>
                                         <option>Alaska</option>
                                         <option>Arizona</option>
@@ -107,23 +118,29 @@
                                         <option>Wisconsin</option>
                                         <option>Wyoming</option>
 								</select>
-                                    <input type="text" class="form-control form-group col-md-3 col-10"  v-bind:placeholder="$t('message.appointmentDZipCodePlaceholder')" v-model="sCaPersonal.zipcode"> 
+                                <div v-if="$v.sCaPersonal.state.$error" class="errorMsj"><p>{{ $t('message.caValidCity') }}</p></div>   
+                                    
+                                    <input type="text" class="form-control form-group col-md-3 col-10"  @blur="$v.sCaPersonal.zipcode.$touch()" v-bind:placeholder="$t('message.appointmentDZipCodePlaceholder')" v-model="sCaPersonal.zipcode"> 
+                                    <div v-if="$v.sCaPersonal.zipcode.$error" class="errorMsj"><p>{{ $t('message.caValidZipcode') }}</p></div>   
                             </div>
                             
                             
 							<div class="row custom-control form-group">
 								<label for="exampleFormControlSelect4">{{ $t('message.CaEthnicity') }}</label>
                                 <button type="button" class="btn btn-sm btn-outline-info " data-toggle="modal" @click="showDialog('race')" data-target="#exampleModalCenter">?</button>
-								<select class="form-control col-md-4 col-10" id="ethnicity" v-model="sCaPersonal.latino">
-									<option>{{ $t('message.yes') }}</option>
+								<select class="form-control col-md-4 col-10" id="ethnicity" v-model="latino">
+									<option>-</option>
+                                    <option>{{ $t('message.yes') }}</option>
 									<option>{{ $t('message.no') }}</option>
 									<option>{{ $t('message.NotSure') }}</option>
 									<option>{{ $t('message.PreferNotToShare') }}</option>
 								</select>
+                                <div v-if="noLatinoShow" class="errorMsj"><p>{{ $t('message.caSelectOption') }}</p></div> 
 							</div>
                             <div class="row custom-control form-group">
 								<label for="exampleFormControlSelect4">{{ $t('message.CaRace') }}</label>
-								<select class="form-control col-md-4 col-10" id="ethnicity" v-model="sCaPersonal.race">
+								<select class="form-control col-md-4 col-10" id="ethnicity" v-model="race">
+                                    <option>-</option>
 									<option>{{ $t('message.presonalEthnicityWhite') }}</option>
 									<option>{{ $t('message.presonalEthnicityBlack') }}</option>
 									<option>{{ $t('message.presonalEthnicityNative') }}</option>
@@ -132,6 +149,7 @@
                                     <option>{{ $t('message.NotSure') }}</option>
 									<option>{{ $t('message.PreferNotToShare') }}</option>
 								</select>
+                                <div v-if="noRaceShow" class="errorMsj"><p>{{ $t('message.caSelectOption') }}</p></div> 
 							</div>
 							<!-- Survey Section 4 medical condition-->
 						<hr class="mb-4">
@@ -141,14 +159,24 @@
 					<div class="input-group-append">
 						<!--button class="btn btn-outline-dark btn-lg float-left" type="button" v-on:click="back()">Back</button-->
 						<!--button class="btn btn-outline-secondary btn-lg" type="button" v-on:click="next()" :disabled="!acknowledge">Analyze Answers</button-->
-						<button class="btn btn-success btn-lg" type="button" v-on:click="next()">{{ $t('message.continue') }}</button>
+						<button class="btn btn-success btn-lg" 
+                        :disabled="
+                        (this.$v.sCaPersonal.name.$invalid === true ||
+                        this.$v.sCaPersonal.middle.$invalid === true ||
+                        this.$v.sCaPersonal.lastname.$invalid === true ||
+                        this.$v.sCaPersonal.street.$invalid === true ||
+                        this.$v.sCaPersonal.city.$invalid === true ||
+                        this.$v.sCaPersonal.zipcode.$invalid === true)"
+                        type="button" v-on:click="next()">{{ $t('message.continue') }}</button>
 					</div>
 				</div>
-			</div>	
+			</div>
     </div>
 </template>
 
 <script>
+import {required, email, maxLength, minLength, numeric} from 'vuelidate/lib/validators'
+
 export default {
     data: function() {
         return {
@@ -157,7 +185,7 @@ export default {
                 middle: '',
                 lastname: '',
                 dateOfBirth: '',
-                gender: '',
+                gender: '-',
                 phoneNumber: '',
                 street: '',
                 city: '',
@@ -165,21 +193,60 @@ export default {
                 zipcode: '',
                 latino: '',
                 race: ''
+                
             },
             date: '',
             street: '',
             city: '',
             zipcode: '',
-            latino: 'Select',
             state: 'California',
-            race: '',
+            race: '-',
+            gender:'-',
+            latino: '-',
             phone: {
                 number: '',
                 valid: false,
                 country: undefined,
             },
+            noNameShow: false,
+            noMiddleShow: false,
+            noLastnameShow: false,
+            phoneError: false,
+            noGenderShow: false,
+            noRaceShow: false,
+            noLatinoShow: false,
+            invalid: true
         }
     },
+    validations: {
+		sCaPersonal:{
+            name:{
+			    required
+            },
+            middle:{
+                required
+            },
+            lastname:{
+                required
+            },
+            street:{
+                required
+            },
+            city:{
+                required
+            },
+            zipcode:{
+                required,
+                minLength: minLength(5),
+                maxLength: maxLength(5),
+                numeric
+
+            },
+            state:{
+                required
+            }
+        }
+	},
     Props: {
         sCaPersonal: Object,
     },
@@ -200,22 +267,61 @@ export default {
 				this.phone.country = country && country.name;
 				
 				if (this.phone.valid === true){
-				this.invalid=false;
+				    this.phoneError=false;
 				}else{
-					this.invalid=true;
+					this.phoneError=true;
 				}
             },
         next(){
+            //add validations
+             if(this.gender === '-'){
+                this.noGenderShow = true;
+            }else if (this.phone.valid === false){
+				    this.phoneError=true;
+			}else if(this.latino === '-'){
+                this.noLatinoShow = true;
+            }else if(this.race === '-'){
+                this.noRaceShow = true;
+            }else{
+            //After Validations
             //Adding dateofbirth
             this.sCaPersonal.dateOfBirth = this.date;
             this.sCaPersonal.phoneNumber = this.phone.number;
             
             //console.log("emitido", this.sCaPersonal)
             this.$emit('sCaPersonal', this.sCaPersonal);
+            }                 
+           
         }
     },
     Props: {
         
+    },
+    watch:{
+        gender: function(){
+            if(this.gender === '-'){
+                this.noGenderShow = true;
+            }else{
+                this.noGenderShow = false;
+                this.sCaPersonal.gender = this.gender;
+            }
+        },
+        race: function(){
+            if(this.race === '-'){
+                this.noRaceShow = true;
+            }else{
+                this.noRaceShow = false;
+                this.sCaPersonal.race = this.race;
+            }
+        },
+        latino: function(){
+            if(this.latino === '-'){
+                this.noLatinoShow = true;
+            }else{
+                this.noLatinoShow = false;
+                this.sCaPersonal.latino = this.latino;
+            }
+        }
     }
 }
 </script>
@@ -230,5 +336,8 @@ export default {
  }
  .padding-subtitle{
 	 padding: 0% 2% 0% 2%;
+ } 
+ .errorMsj{
+	 color: coral;
  }
 </style>
