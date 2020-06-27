@@ -12,26 +12,31 @@
 							<!-- Survey CA Section 1 Personal information-->
                             <div class="row custom-control form-group">
                                 <label>{{ $t('message.caName') }}.</label>
-                                <div class="col-sm-6 col-md-4">
+                                <div class="col-10 col-md-4">
                                     <input type="text" class="form-control"  @blur="$v.sCaPersonal.name.$touch()" v-bind:placeholder="$t('message.caNameInput')"  id="name"  v-model="sCaPersonal.name">
                                     <div v-if="$v.sCaPersonal.name.$error" class="errorMsj"><p>{{ $t('message.caValidName') }}</p></div>  
                                 </div>
                             </div>
                             <div class="row custom-control form-group">
-                                <div class="col-sm-4 col-md-2">
+                                <div class="col-4 col-md-2">
                                     <input type="text" class="form-control" @blur="$v.sCaPersonal.middle.$touch()" v-bind:placeholder="$t('message.caNamemMiddleInput')"  id="middle"  v-model="sCaPersonal.middle">
                                     <div v-if="$v.sCaPersonal.middle.$error" class="errorMsj"><p>{{ $t('message.caValidMiddleName') }}</p></div>   
                                 </div>
                             </div>
                             <div class="row custom-control form-group">
-                                <div class="col-sm-8 col-md-4">
+                                <div class="col-10 col-md-4">
                                     <input type="text" class="form-control" @blur="$v.sCaPersonal.lastname.$touch()" v-bind:placeholder="$t('message.caLastNameInput')"  id="lastname"  v-model="sCaPersonal.lastname">
                                     <div v-if="$v.sCaPersonal.lastname.$error" class="errorMsj"><p>{{ $t('message.caValidLastname') }}</p></div>   
                                 </div>
                             </div>
 							<div class="row custom-control form-group">
-								<label for="exampleFormControlSelect4">{{ $t('message.dateOfBirth') }}</label>
-								 <b-form-datepicker id="example-datepicker"  v-model="date" class="col-md-6 col-11"  v-bind:placeholder="$t('message.appointmentDatePicker')"></b-form-datepicker>
+								<div class="col-8 col-md-2">
+                                    <label for="exampleFormControlSelect4">{{ $t('message.dateOfBirth') }}</label>
+                                    <input type="text" class="form-control" v-bind:placeholder="$t('message.appointmentDateBirth')"  id="day"  v-model="sCaPersonal.dateOfBirth">
+                    
+                                    <div v-if="noBirthShow" class="errorMsj"><p>{{ $t('message.caValidDateofBirth') }}</p></div> 
+                                </div>  					
+                    			 <!--b-form-datepicker id="example-datepicker"  v-model="date" class="col-md-6 col-11"  v-bind:placeholder="$t('message.appointmentDatePicker')"></b-form-datepicker-->
 							</div>
                             <div class="row custom-control form-group">
 								<label for="exampleFormControlSelect4">{{ $t('message.presonalGender') }}</label>
@@ -215,7 +220,8 @@ export default {
             noGenderShow: false,
             noRaceShow: false,
             noLatinoShow: false,
-            invalid: true
+            invalid: true,
+            noBirthShow: false
         }
     },
     validations: {
@@ -240,7 +246,6 @@ export default {
                 minLength: minLength(5),
                 maxLength: maxLength(5),
                 numeric
-
             },
             state:{
                 required
@@ -276,6 +281,8 @@ export default {
             //add validations
              if(this.gender === '-'){
                 this.noGenderShow = true;
+            }else if(!this.validateDate){
+                this.noBirthShow = true;
             }else if (this.phone.valid === false){
 				    this.phoneError=true;
 			}else if(this.latino === '-'){
@@ -285,19 +292,39 @@ export default {
             }else{
             //After Validations
             //Adding dateofbirth
-            this.sCaPersonal.dateOfBirth = this.date;
+            //this.sCaPersonal.dateOfBirth = this.date;
             this.sCaPersonal.phoneNumber = this.phone.number;
             
             //console.log("emitido", this.sCaPersonal)
             this.$emit('sCaPersonal', this.sCaPersonal);
             }                 
            
+        },
+        validateDate(){
+        var reg =  "^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$";
+                if (this.sCaPersonal.dateOfBirth.match(reg)) {
+                    if(this.sCaPersonal.dateOfBirth.substr(6,10)>2021){
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }else {
+                    return false;
+                }
         }
     },
     Props: {
         
     },
     watch:{
+        'sCaPersonal.dateOfBirth':function(){
+           if(this.validateDate()){
+            this.noBirthShow=false;
+           }else{
+            this.noBirthShow=true;
+           }
+       }
+        ,
         gender: function(){
             if(this.gender === '-'){
                 this.noGenderShow = true;

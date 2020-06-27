@@ -18,7 +18,7 @@ export class ResultNotification extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   email: string;
 

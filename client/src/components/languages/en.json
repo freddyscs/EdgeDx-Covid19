@@ -189,6 +189,8 @@
     "caValidCity": "Please enter the City name",
     "caValidZipcode": "Please enter a valid zipcode",
     "caValidGender": "Please select a gender",
-    "caSelectOption": "Please select an option"
+    "caSelectOption": "Please select an option",
+    "appointmentDateBirth": "mm-dd-yyyy",
+    "caValidDateofBirth": "Please enter a valid date of birth"
 
   }
