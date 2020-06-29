@@ -191,6 +191,10 @@
     "caValidGender": "Please select a gender",
     "caSelectOption": "Please select an option",
     "appointmentDateBirth": "mm-dd-yyyy",
-    "caValidDateofBirth": "Please enter a valid date of birth"
+    "caValidDateofBirth": "Please enter a valid date of birth",
+    "alertGender": "The lab that processes tests uses sex as one of the ways it makes sure its processes are accurate.",
+    "alertRace": "These questions are part of federal reporting guidelines to help agencies better respond to health challenges and make sure funds are used in a nondiscriminatory manner.",
+    "alertAddress": "Your information will be used to contact you if needed",
+    "alertDays": "If you are not sure, please put down your best estimate."
 
   }

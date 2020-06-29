@@ -19,8 +19,7 @@
                             </div>
                             <div class="row custom-control form-group">
                                 <div class="col-4 col-md-2">
-                                    <input type="text" class="form-control" @blur="$v.sCaPersonal.middle.$touch()" v-bind:placeholder="$t('message.caNamemMiddleInput')"  id="middle"  v-model="sCaPersonal.middle">
-                                    <div v-if="$v.sCaPersonal.middle.$error" class="errorMsj"><p>{{ $t('message.caValidMiddleName') }}</p></div>   
+                                    <input type="text" class="form-control" v-bind:placeholder="$t('message.caNamemMiddleInput')"  id="middle"  v-model="sCaPersonal.middle">
                                 </div>
                             </div>
                             <div class="row custom-control form-group">
@@ -167,7 +166,6 @@
 						<button class="btn btn-success btn-lg" 
                         :disabled="
                         (this.$v.sCaPersonal.name.$invalid === true ||
-                        this.$v.sCaPersonal.middle.$invalid === true ||
                         this.$v.sCaPersonal.lastname.$invalid === true ||
                         this.$v.sCaPersonal.street.$invalid === true ||
                         this.$v.sCaPersonal.city.$invalid === true ||
@@ -229,9 +227,6 @@ export default {
             name:{
 			    required
             },
-            middle:{
-                required
-            },
             lastname:{
                 required
             },
@@ -258,11 +253,11 @@ export default {
     methods:{
         showDialog: function(item){
             if(item === 'gender'){
-                alert("The lab that processes tests uses sex as one of the ways it makes sure its processes are accurate.");
+                alert(this.$t('message.alertGender'));
             }else if (item === 'race'){
-                alert("These questions are part of federal reporting guidelines to help agencies better respond to health challenges and make sure funds are used in a nondiscriminatory manner.")    
+                alert(this.$t('message.alertRace'));   
             }else if (item === 'address'){
-                alert("Your information will be used to contact you if needed")    
+                alert(this.$t('message.alertAddress'));
             }
         },
         onInput(formattedNumber, { number, valid, country }) {

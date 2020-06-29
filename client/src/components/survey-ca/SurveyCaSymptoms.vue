@@ -263,7 +263,7 @@ export default {
     methods:{
          showDialog: function(item){
             if(item === 'days'){
-                alert("If you are not sure, please put down your best estimate.");
+                alert(this.$t('message.alertDays'));
             }
         },
         next(){            
