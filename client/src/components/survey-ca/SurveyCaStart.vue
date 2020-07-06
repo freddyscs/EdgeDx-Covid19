@@ -19,7 +19,7 @@
 			</div>
             
 			<div class="row justify-content-center padding-box" >
-				<button class="btn btn-success" type="button"  v-on:click="start()" >{{ $t('message.welcomeButton') }}</button>
+				<button class="btn btn-outline-success" type="button"  v-on:click="start()" >{{ $t('message.welcomeButton') }}</button>
             </div>					
             <div class="row justify-content-center" >
 				<p class="text-muted"><small>{{ $t('message.help') }}</small></p>

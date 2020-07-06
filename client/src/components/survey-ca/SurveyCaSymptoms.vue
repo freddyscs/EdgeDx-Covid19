@@ -203,7 +203,7 @@
 					<div class="input-group-append">
 						<!--button class="btn btn-outline-dark btn-lg float-left" type="button" v-on:click="back()">Back</button-->
 						<!--button class="btn btn-outline-secondary btn-lg" type="button" v-on:click="next()" :disabled="!acknowledge">Analyze Answers</button-->
-						<button class="btn btn-success btn-lg" type="button" v-on:click="next()">{{ $t('message.continue') }}</button>
+						<button class="btn btn-outline-success btn-lg" type="button" v-on:click="next()">{{ $t('message.continue') }}</button>
 					</div>
 				</div>
 			</div>	

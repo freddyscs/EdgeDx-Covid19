@@ -163,7 +163,7 @@
 					<div class="input-group-append">
 						<!--button class="btn btn-outline-dark btn-lg float-left" type="button" v-on:click="back()">Back</button-->
 						<!--button class="btn btn-outline-secondary btn-lg" type="button" v-on:click="next()" :disabled="!acknowledge">Analyze Answers</button-->
-						<button class="btn btn-success btn-lg" 
+						<button class="btn btn-outline-success btn-lg" 
                         :disabled="
                         (this.$v.sCaPersonal.name.$invalid === true ||
                         this.$v.sCaPersonal.lastname.$invalid === true ||
